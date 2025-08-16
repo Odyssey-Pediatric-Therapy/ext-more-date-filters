@@ -1,9 +1,9 @@
 {
-    "module": "{@name}",
-    "name": "{@nameLabel}",
-    "description": "{@description}",
-    "author": "{@author}",
-    "bundled": {@bundled},
+    "module": "MoreDateFilters",
+    "name": "More Date Filters",
+    "description": "Expand the list of date filters.",
+    "author": "Anthony Andriano",
+    "bundled": true,
     "acceptableVersions": [
         ">=9.1.0"
     ],
