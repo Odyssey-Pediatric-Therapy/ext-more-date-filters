@@ -1,5 +1,4 @@
 {
   "psr-4": {
-      "MoreDateFiltersTest\\": "custom/Espo/Modules/MoreDateFilters/Tests/"
   }
 }
