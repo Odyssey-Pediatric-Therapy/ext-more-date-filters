@@ -1,0 +1,7 @@
+{
+    "fields": {
+        "dateEnd": {
+            "view": "more-date-filters:views/task/fields/date-end"
+        }
+    }
+}

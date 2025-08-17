@@ -1,0 +1,10 @@
+{
+    "fields": {
+        "dateStart": {
+            "view": "more-date-filters:views/meeting/fields/date-start"
+        },
+        "dateEnd": {
+            "view": "more-date-filters:views/meeting/fields/date-end"
+        }
+    }
+}

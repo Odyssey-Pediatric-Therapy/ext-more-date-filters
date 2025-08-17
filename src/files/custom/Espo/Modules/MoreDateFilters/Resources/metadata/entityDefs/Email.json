@@ -1,0 +1,7 @@
+{
+    "fields": {
+        "dateSent": {
+            "view": "more-date-filters:views/email/fields/date-sent"
+        }
+    }
+}

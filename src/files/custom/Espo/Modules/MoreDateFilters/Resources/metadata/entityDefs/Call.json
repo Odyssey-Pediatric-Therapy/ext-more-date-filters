@@ -1,0 +1,7 @@
+{
+    "fields": {
+        "dateStart": {
+            "view": "more-date-filters:views/call/fields/date-start"
+        }
+    }
+}
