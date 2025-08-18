@@ -484,5 +484,33 @@
             ],
             "url": "https://raw.githubusercontent.com/espocrm/espocrm/master/schema/metadata/app/webSocket.json"
         }
-    ]
+    ],
+    "files.exclude": {
+      "build": true,
+      "site/build": true,
+      "site/custom": true,
+      "site/client/custom": true,
+      "site/tests/**": true,
+      "node_modules": true,
+      ".idea": true,
+    },
+    "emeraldwalk.runonsave": {
+      "autoClearConsole": true,
+      "message": "-- Run on save processing file changes...",
+      "messageAfter": "-- Run on save completed",
+      "commands": [
+          {
+              "match": ".*",
+              "cmd": "echo '${fileBasename}' saved."
+          },
+          {
+              "match": "src/files/.*",
+              "cmd": "node build --copy",
+          },
+          {
+              "match": "config.*",
+              "cmd": "npm run all",
+          },
+      ]
+    },
 }
