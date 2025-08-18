@@ -16,5 +16,6 @@ return [
     "user" => "root",
     "password" => "",
   ],
-
+  'dateFormat' => 'YYYY-MM-DD',
+  'timeFormat' => 'HH:mm',
 ];
