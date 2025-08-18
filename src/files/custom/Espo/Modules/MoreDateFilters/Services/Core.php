@@ -14,91 +14,71 @@ class Core
     private Log $log,
   ) {}
 
-  public function getWeekStartEnd(DateTime $anchor, int $addlWeeks = 0, bool $returnUtc = false): array {
-    $this->log->debug("Start    ",[$anchor]);
-    $tz = $anchor->getTimezone();
-    $this->log->debug("Tz       ",[$tz->getName()]);
+  private function convert(DateTime $from, DateTime $to): array {
+    $from->setTimezone(new DateTimeZone('UTC'));
+    $to->setTimezone(new DateTimeZone('UTC'));
 
-    $anchor->setTime(0,0);
-    $this->log->debug("After 0,0",[$anchor]);
+    $this->log->debug("convert from: {$from->format('Y-m-d H:i:s')} to: {$to->format('Y-m-d H:i:s')}", []);
 
-    if($tz->getName() !== "UTC") {
-      $this->log->debug("!= UTC",[]);
-      $utc = new DateTimeZone("UTC");
-      $anchor->setTimezone($utc);
-    }
-    $this->log->debug("After UTC",[$anchor]);
+    return [$from, $to];
+  }
+
+  public function getFullDay(DateTime $anchor, int $addlDays = 0): array {
+    $from = clone $anchor;
+    $from->setTime(0, 0);
+
+    $to = clone $from;
+    $days = 1 + $addlDays;
+    $to->modify("+{$days} day");
+
+    return $this->convert($from, $to);
+  }
+
+  public function getWeekStartEnd(DateTime $anchor, int $addlWeeks = 0): array {
+    $from = clone $anchor;
+    $from->setTime(0, 0);
 
     $dayOfWeek = intval($anchor->format('w'));
+    $from->modify("-" . $dayOfWeek . " days");
 
-    $from = (clone $anchor)->modify("-" . $dayOfWeek . " days");
-    $to = (clone $from)->add(new DateInterval("P7D"));
-    #$to = (clone $anchor)->modify("+" . (7 - $dayOfWeek) . " days")->modify("+{$addlWeeks} weeks");
+    $to = clone $from;
+    $days = (1 + $addlWeeks) * 7;
+    $to->modify("+{$days} day");
 
-    $this->log->debug("From To  ",[$from, $to]);
-
-    if(!$returnUtc && $tz->getName() !== "UTC") {
-      $from->setTimezone($tz);
-      $to->setTimezone($tz);
-    }
-    $this->log->debug("From To  ",[$from, $to]);
-
-    return array($from, $to);
+    return $this->convert($from, $to);
   }
 
-  public function getFullDay(DateTime $anchor, int $addlDays = 0, bool $returnUtc = false): array {
-    $from = (clone $anchor)->setTime(0, 0);
+  public function getFullMonth(DateTime $anchor, int $addlMonths = 0): array {
+    $from = clone $anchor;
+    $from->modify("first day of this month")->setTime(0, 0);
 
-    if($returnUtc) {
-      $utc = new DateTimeZone("UTC");
-      $from->setTimezone($utc);
-    }
+    $to = clone $from;
+    $months = 1 + $addlMonths;
+    $to->modify("+{$months} month");
 
-    $to = (clone $from)->modify("+" . (($addlDays + 1)) . " days");
-
-    return array($from, $to);
+    return $this->convert($from, $to);
   }
 
-  public function getFullMonth(DateTime $anchor, int $addlMonths = 0, bool $returnUtc = false): array {
-    $utc = new DateTimeZone("UTC");
+  public function getFullQuarter(DateTime $anchor, int $addlQuarters = 0): array {
+    $quarter = ceil($anchor->format("n") / 3);
 
-    $timezone = $anchor->getTimezone();
-    $from = (clone $anchor)->setTimezone($utc)->modify("first day of this month")->setTime(0, 0);
-    $to = (clone $from)->modify("first day of +" . ($addlMonths + 1) . " month");
+    $from = clone $anchor;
+    $from->setDate($anchor->format("Y"), $quarter * 3 - 2, 1)->setTime(0, 0);
 
-    if(!$returnUtc) {
-      $from->setTimezone($timezone);
-      $to->setTimezone($timezone);
-    }
+    $months = (1 + $addlQuarters) * 3;
+    $to = (clone $from)->modify("+{$months} months");
 
-    return [$from, $to];
+    return $this->convert($from, $to);
   }
 
-  public function getFullQuarter(DateTime $anchor, int $addlQuarters = 0, bool $returnUtc = false): array {
-    $month = intval($anchor->format('n'));
-    $quarterStartMonth = (int)floor(($month - 1) / 3) * 3 + 1;
-    $from = (clone $anchor)->modify("first day of {$quarterStartMonth} month");
+  public function getFullYear(DateTime $anchor, int $addlYears = 0): array {
+    $from = clone $anchor;
+    $from->modify("first day of this year")->setTime(0, 0);
 
-    if($returnUtc) {
-      $utc = new DateTimeZone("UTC");
-      $from->setTimezone($utc);
-    }
+    $to = clone $from;
+    $years = 1 + $addlYears;
+    $to->modify("+{$years} year");
 
-    $to = (clone $from)->modify("+" . (3 * ($addlQuarters + 1)) . " months");
-
-    return [$from, $to];
-  }
-
-  public function getFullYear(DateTime $anchor, int $addlYears = 0, bool $returnUtc = false): array {
-    $from = (clone $anchor)->modify("first day of January")->setTime(0, 0);
-    $to = (clone $from)->modify("first day of January +" . ($addlYears + 1) . " year");
-
-    if($returnUtc) {
-      $utc = new DateTimeZone("UTC");
-      $from->setTimezone($utc);
-      $to->setTimezone($utc);
-    }
-
-    return [$from, $to];
+    return $this->convert($from, $to);
   }
 }

@@ -4,7 +4,6 @@
         "yesterdayDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\Yesterday",
         "tomorrowDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\Tomorrow",
         "tomorrowDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\Tomorrow",
-
         "currentWeekDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\CurrentWeek",
         "currentWeekDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\CurrentWeek",
         "lastWeekDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastWeek",
@@ -15,19 +14,16 @@
         "nextWeekDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\NextWeek",
         "nextXWeeksDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\NextXWeeks",
         "nextXWeeksDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\NextXWeeks",
-
         "lastXMonthsDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastXMonths",
         "lastXMonthsDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\LastXMonths",
         "nextXMonthsDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\NextXMonths",
         "nextXMonthsDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\NextXMonths",
-
         "lastXQuartersDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastXQuarters",
         "lastXQuartersDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\LastXQuarters",
         "nextQuarterDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\NextQuarter",
         "nextQuarterDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\NextQuarter",
         "nextXQuartersDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\NextXQuarters",
         "nextXQuartersDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\NextXQuarters",
-
         "lastXYearsDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastXYears",
         "lastXYearsDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\LastXYears",
         "nextYearDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\NextYear",
