@@ -1,11 +1,11 @@
 {
   "name": "espocrm-ext-more-date-filters",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "scripts": {
     "sa": "node build --copy && node build --composer-install && php site/vendor/bin/phpstan",
-    "unit-tests": "node build --copy && node build --composer-install && cd site && php vendor/bin/phpunit tests/unit/Espo/Modules/{ModuleName}",
-    "integration-tests": "node build --copy && node build --composer-install && cd site && php vendor/bin/phpunit tests/integration/Espo/Modules/{ModuleName}",
+    "unit-tests": "node build --copy && node build --composer-install && cd site && php vendor/bin/phpunit tests/unit/Espo/Modules/MoreDateFilters",
+    "integration-tests": "node build --copy && node build --composer-install && cd site && php vendor/bin/phpunit tests/integration/Espo/Modules/MoreDateFilters",
     "copy": "node build --copy",
     "composer-install": "node build --composer-install",
     "sync": "node build --copy && node build --composer-install",

@@ -2,23 +2,14 @@
 
 namespace Espo\Modules\MoreDateFilters\Services;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 
-use Espo\Core\Utils\Log;
-
 class Core
 {
-  public function __construct(
-    private Log $log,
-  ) {}
-
   private function convert(DateTime $from, DateTime $to): array {
     $from->setTimezone(new DateTimeZone('UTC'));
     $to->setTimezone(new DateTimeZone('UTC'));
-
-    $this->log->debug("convert from: {$from->format('Y-m-d H:i:s')} to: {$to->format('Y-m-d H:i:s')}", []);
 
     return [$from, $to];
   }
