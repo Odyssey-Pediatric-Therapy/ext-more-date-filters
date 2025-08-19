@@ -10,7 +10,9 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
 
       // Days
       'lastSevenDays',
+      'lastSevenDaysExtDate',
       'lastXDays',
+      'lastXDaysDate',
       'nextXDays',
       'olderThanXDays',
       'afterXDays',
@@ -18,7 +20,7 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
       // Weeks
       'currentWeekDate',
       "lastWeekDate",
-      //"lastXWeeksDate",
+      // "lastXWeeksDate",
       "nextWeekDate",
       //"nextXWeeksDate",
 
@@ -33,14 +35,14 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
       'currentQuarter',
       'lastQuarter',
       //"lastXQuartersDate",
-      "nextQuarterDate",
+      // "nextQuarterDate",
       //"nextXQuartersDate",
 
       // Years
       'currentYear',
       'lastYear',
       //"lastXYearsDate",
-      "nextYearDate",
+      // "nextYearDate",
       //"nextXYearsDate",
 
       // Misc

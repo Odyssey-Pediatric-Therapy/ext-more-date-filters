@@ -5,6 +5,8 @@
             "yesterdayDatetime": "Yesterday",
             "tomorrowDate": "Tomorrow",
             "tomorrowDatetime": "Tomorrow",
+            "lastSevenDaysExtDate": "Last 7 Days (Excluding Today)",
+            "lastSevenDaysExtDatetime": "Last 7 Days (Excluding Today)",
             "currentWeekDate": "Current Week",
             "currentWeekDatetime": "Current Week",
             "lastWeekDate": "Last Week",
