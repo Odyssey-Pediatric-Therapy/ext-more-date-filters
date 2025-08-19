@@ -14,6 +14,7 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
       'lastXDays',
       // 'lastXDaysDatetime',
       'nextXDays',
+      // 'nextXDaysDatetime',
       'olderThanXDays',
       'afterXDays',
 

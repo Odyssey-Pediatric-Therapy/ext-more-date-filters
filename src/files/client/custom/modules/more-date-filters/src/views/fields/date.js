@@ -14,6 +14,7 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
       'lastXDays',
       // 'lastXDaysDate',
       'nextXDays',
+      // 'nextXDaysDate',
       'olderThanXDays',
       'afterXDays',
 
