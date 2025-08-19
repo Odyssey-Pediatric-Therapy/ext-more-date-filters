@@ -30,7 +30,7 @@ class NextWeek implements ItemConverter
     $dayOfWeek = intval($today->format('w'));
     $nextWeekStart = (clone $today)->modify("+7 days")->modify("-" . $dayOfWeek . " days");
 
-    list($from, $to) = $this->core->getWeekStartEnd(anchor: $nextWeekStart, returnUtc: true);
+    list($from, $to) = $this->core->getWeekStartEnd(anchor: $nextWeekStart);
 
     $attribute = $item->getAttribute();
     $where = [

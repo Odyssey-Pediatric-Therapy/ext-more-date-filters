@@ -27,7 +27,7 @@ class CurrentWeek implements ItemConverter
     $local = new DateTimeZone($this->config->get("timeZone", "America/Denver"));
     $today = new DateTime("today", $local);
 
-    list($from, $to) = $this->core->getWeekStartEnd(anchor: $today, returnUtc: true);
+    list($from, $to) = $this->core->getWeekStartEnd(anchor: $today);
 
     $attribute = $item->getAttribute();
     $where = [

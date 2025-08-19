@@ -27,7 +27,7 @@ class Tomorrow implements ItemConverter
     $local = new DateTimeZone($this->config->get("timeZone", "America/Denver"));
     $tomorrow = new DateTime("tomorrow", $local);
 
-    list($from, $to) = $this->core->getFullDay(anchor: $tomorrow, returnUtc: true);
+    list($from, $to) = $this->core->getFullDay(anchor: $tomorrow);
 
     $attribute = $item->getAttribute();
     $where = [

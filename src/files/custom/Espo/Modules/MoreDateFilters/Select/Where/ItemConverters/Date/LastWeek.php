@@ -29,7 +29,7 @@ class LastWeek implements ItemConverter
 
     $dayOfWeek = intval($today->format('w'));
     $lastWeekStart = (clone $today)->modify("-7 days")->modify("-" . $dayOfWeek . " days");
-    
+
     list($from, $to) = $this->core->getWeekStartEnd(anchor: $lastWeekStart);
 
     $attribute = $item->getAttribute();

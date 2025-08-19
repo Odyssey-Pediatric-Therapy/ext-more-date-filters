@@ -27,7 +27,7 @@ class Yesterday implements ItemConverter
     $local = new DateTimeZone($this->config->get("timeZone", "America/Denver"));
     $yesterday = new DateTime("yesterday", $local);
 
-    list($from, $to) = $this->core->getFullDay(anchor: $yesterday, returnUtc: true);
+    list($from, $to) = $this->core->getFullDay(anchor: $yesterday);
 
     $attribute = $item->getAttribute();
     $where = array(
