@@ -12,6 +12,7 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
       'lastSevenDays',
       'lastSevenDaysExtDatetime',
       'lastXDays',
+      // 'lastXDaysDatetime',
       'nextXDays',
       'olderThanXDays',
       'afterXDays',

@@ -6,6 +6,8 @@
         "tomorrowDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\Tomorrow",
         "lastSevenDaysExtDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastSevenDays",
         "lastSevenDaysExtDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\LastSevenDays",
+        "lastXDaysDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastXDays",
+        "lastXDaysDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\LastXDays",
         "currentWeekDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\CurrentWeek",
         "currentWeekDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\CurrentWeek",
         "lastWeekDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastWeek",

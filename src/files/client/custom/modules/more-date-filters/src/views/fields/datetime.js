@@ -12,6 +12,7 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
       'lastSevenDays',
       'lastSevenDaysExtDatetime',
       'lastXDays',
+      // 'lastXDaysDatetime',
       'nextXDays',
       'olderThanXDays',
       'afterXDays',
