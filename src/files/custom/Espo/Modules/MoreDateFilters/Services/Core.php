@@ -64,7 +64,7 @@ class Core
 
   public function getFullYear(DateTime $anchor, int $addlYears = 0): array {
     $from = clone $anchor;
-    $from->modify("first day of this year")->setTime(0, 0);
+    $from->modify("first day of January")->setTime(0, 0);
 
     $to = clone $from;
     $years = 1 + $addlYears;
