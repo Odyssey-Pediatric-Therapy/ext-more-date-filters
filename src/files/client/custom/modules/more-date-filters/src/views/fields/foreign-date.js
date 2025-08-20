@@ -5,8 +5,8 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDate",
-      "tomorrowDate",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',

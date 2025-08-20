@@ -4,8 +4,8 @@ define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDatetime",
-      "tomorrowDatetime",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',

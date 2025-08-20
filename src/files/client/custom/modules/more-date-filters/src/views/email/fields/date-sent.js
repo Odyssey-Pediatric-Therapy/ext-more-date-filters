@@ -5,8 +5,8 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDatetime",
-      "tomorrowDatetime",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',

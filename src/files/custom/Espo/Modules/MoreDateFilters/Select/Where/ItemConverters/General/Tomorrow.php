@@ -1,6 +1,6 @@
 <?php
 
-namespace Espo\Modules\MoreDateFilters\Select\Where\ItemConverters\DateTime;
+namespace Espo\Modules\MoreDateFilters\Select\Where\ItemConverters\General;
 
 use DateTime;
 use DateTimeZone;

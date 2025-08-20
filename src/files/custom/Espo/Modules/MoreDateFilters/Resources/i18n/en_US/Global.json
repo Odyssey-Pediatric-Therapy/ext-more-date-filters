@@ -1,10 +1,8 @@
 {
     "options": {
         "dateSearchRanges": {
-            "yesterdayDate": "Yesterday",
-            "yesterdayDatetime": "Yesterday",
-            "tomorrowDate": "Tomorrow",
-            "tomorrowDatetime": "Tomorrow",
+            "yesterdayExt": "Yesterday",
+            "tomorrowExt": "Tomorrow",
             "lastSevenDaysExtDate": "Last 7 Days (Excluding Today)",
             "lastSevenDaysExtDatetime": "Last 7 Days (Excluding Today)",
             "lastXDaysDate": "Last X Days",

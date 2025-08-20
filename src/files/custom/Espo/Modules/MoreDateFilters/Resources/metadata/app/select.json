@@ -1,9 +1,7 @@
 {
     "whereItemConverterClassNameMap": {
-        "yesterdayDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\Yesterday",
-        "yesterdayDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\Yesterday",
-        "tomorrowDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\Tomorrow",
-        "tomorrowDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\Tomorrow",
+        "yesterdayExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\General\\Yesterday",
+        "tomorrowExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\General\\Tomorrow",
         "lastSevenDaysExtDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastSevenDays",
         "lastSevenDaysExtDatetime": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\DateTime\\LastSevenDays",
         "lastXDaysDate": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Date\\LastXDays",

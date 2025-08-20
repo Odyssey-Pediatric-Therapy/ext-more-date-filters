@@ -5,8 +5,8 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDatetime",
-      "tomorrowDatetime",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',

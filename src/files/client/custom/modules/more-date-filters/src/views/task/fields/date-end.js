@@ -4,8 +4,8 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDatetime",
-      "tomorrowDatetime",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',

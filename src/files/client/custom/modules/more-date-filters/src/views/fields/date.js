@@ -5,8 +5,8 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDate",
-      "tomorrowDate",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',

@@ -5,8 +5,8 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDatetime",
-      "tomorrowDatetime",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',
