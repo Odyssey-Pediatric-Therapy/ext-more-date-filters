@@ -30,10 +30,16 @@ class Tomorrow implements ItemConverter
     list($from, $to) = $this->core->getFullDay(anchor: $tomorrow);
 
     $attribute = $item->getAttribute();
+
+    if(str_ends_with($attribute, "Date"))
+      $format = DateTimeUtil::SYSTEM_DATE_FORMAT;
+    else
+      $format = DateTimeUtil::SYSTEM_DATE_TIME_FORMAT;
+
     $where = [
       'AND' => [
-        $attribute . '>=' => $from->format(DateTimeUtil::SYSTEM_DATE_TIME_FORMAT),
-        $attribute . '<'  => $to->format(DateTimeUtil::SYSTEM_DATE_TIME_FORMAT),
+        $attribute . '>=' => $from->format($format),
+        $attribute . '<'  => $to->format($format),
       ],
     ];
 
