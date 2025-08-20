@@ -27,10 +27,9 @@ class LastWeek implements ItemConverter
     $local = new DateTimeZone($this->config->get("timeZone", "America/Denver"));
     $today = new DateTime("today", $local);
 
-    $dayOfWeek = intval($today->format('w'));
-    $lastWeekStart = (clone $today)->modify("-7 days")->modify("-" . $dayOfWeek . " days");
+    $lastWeek = $today->modify("-1 week");
 
-    list($from, $to) = $this->core->getWeekStartEnd(anchor: $lastWeekStart);
+    list($from, $to) = $this->core->getWeekStartEnd(anchor: $lastWeek);
 
     $attribute = $item->getAttribute();
     $where = [
