@@ -10,41 +10,41 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
 
       // Days
       'lastSevenDays',
-      'lastSevenDaysExtDatetime',
+      'lastSevenDaysExt',
       'lastXDays',
-      // 'lastXDaysDatetime',
+      // 'lastXDaysExt',
       'nextXDays',
-      // 'nextXDaysDatetime',
+      // 'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
       // Weeks
-      'currentWeekDatetime',
-      "lastWeekDatetime",
-      // "lastXWeeksDatetime",
-      "nextWeekDatetime",
-      //"nextXWeeksDatetime",
+      'currentWeekExt',
+      "lastWeekExt",
+      // "lastXWeeksExt",
+      "nextWeekExt",
+      //"nextXWeeksExt",
 
       // Months
       'currentMonth',
       'lastMonth',
-      //"lastXMonthsDatetime",
+      //"lastXMonthsExt",
       'nextMonth',
-      //"nextXMonthsDatetime",
+      //"nextXMonthsExt",
 
       // Quarters
       'currentQuarter',
       'lastQuarter',
-      //"lastXQuartersDatetime",
-      // "nextQuarterDatetime",
-      //"nextXQuartersDatetime",
+      //"lastXQuartersExt",
+      // "nextQuarterExt",
+      //"nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
-      //"lastXYearsDatetime",
-      // "nextYearDatetime",
-      //"nextXYearsDatetime",
+      //"lastXYearsExt",
+      // "nextYearExt",
+      //"nextXYearsExt",
 
       // Misc
       'isEmpty',

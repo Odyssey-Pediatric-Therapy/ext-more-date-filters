@@ -1,6 +1,6 @@
 <?php
 
-namespace Espo\Modules\MoreDateFilters\Select\Where\ItemConverters\General;
+namespace Espo\Modules\MoreDateFilters\Select\Where\ItemConverters;
 
 use DateTime;
 use DateTimeZone;
@@ -13,10 +13,11 @@ use Espo\Core\Utils\DateTime as DateTimeUtil;
 use Espo\ORM\Query\Part\WhereClause;
 use Espo\ORM\Query\Part\WhereItem as WhereClauseItem;
 use Espo\ORM\Query\SelectBuilder as QueryBuilder;
+use Espo\ORM\Type\AttributeType;
 
 use Espo\Modules\MoreDateFilters\Services\Core;
 
-class Yesterday implements ItemConverter
+class LastWeek implements ItemConverter
 {
   public function __construct(
     private string $entityType,
@@ -28,15 +29,17 @@ class Yesterday implements ItemConverter
   public function convert(QueryBuilder $queryBuilder, Item $item): WhereClauseItem
   {
     $local = new DateTimeZone($this->config->get("timeZone", "America/Denver"));
-    $yesterday = new DateTime("yesterday", $local);
+    $today = new DateTime("today", $local);
 
-    list($from, $to) = $this->core->getFullDay(anchor: $yesterday);
+    $lastWeek = (clone $today)->modify("-1 week");
+
+    list($from, $to) = $this->core->getWeekStartEnd(anchor: $lastWeek);
 
     $attribute = $item->getAttribute();
     $fieldDefs = $this->metadata->get(['entityDefs', $this->entityType, 'fields', $attribute], []);
-    $fieldType = $fieldDefs['type'] ?? 'datetime';
+    $fieldType = $fieldDefs['type'];
 
-    if($fieldType === 'date')
+    if($fieldType === AttributeType::DATE)
       $format = DateTimeUtil::SYSTEM_DATE_FORMAT;
     else
       $format = DateTimeUtil::SYSTEM_DATE_TIME_FORMAT;
