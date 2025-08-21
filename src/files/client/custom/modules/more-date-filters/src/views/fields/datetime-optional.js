@@ -36,14 +36,14 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
       'currentQuarter',
       'lastQuarter',
       //"lastXQuartersExt",
-      // "nextQuarterExt",
+      "nextQuarterExt",
       //"nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
       //"lastXYearsExt",
-      // "nextYearExt",
+      "nextYearExt",
       //"nextXYearsExt",
 
       // Misc

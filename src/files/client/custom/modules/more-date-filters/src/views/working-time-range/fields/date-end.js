@@ -34,14 +34,14 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
       'currentQuarter',
       'lastQuarter',
       //"lastXQuartersExt",
-      // "nextQuarterExt",
+      "nextQuarterExt",
       //"nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
       //"lastXYearsExt",
-      // "nextYearExt",
+      "nextYearExt",
       //"nextXYearsExt",
 
       // Misc

@@ -36,14 +36,14 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
       'currentQuarter',
       'lastQuarter',
       //"lastXQuartersExt",
-      // "nextQuarterExt",
+      "nextQuarterExt",
       //"nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
       //"lastXYearsExt",
-      // "nextYearExt",
+      "nextYearExt",
       //"nextXYearsExt",
 
       // Misc
