@@ -1,47 +1,48 @@
-define('more-date-filters:views/working-time-range/fields/date-end', ['views/working-time-range/fields/datetime'], Dep => {
+define('more-date-filters:views/working-time-range/fields/date-end', ['views/working-time-range/fields/date-end'], Dep => {
 
   return class extends Dep {
 
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDatetime",
-      "tomorrowDatetime",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',
+      'lastSevenDaysExt',
       'lastXDays',
       'nextXDays',
       'olderThanXDays',
       'afterXDays',
 
       // Weeks
-      'currentWeekDatetime',
-      "lastWeekDatetime",
-      //"lastXWeeksDatetime",
-      "nextWeekDatetime",
-      //"nextXWeeksDatetime",
+      'currentWeekExt',
+      "lastWeekExt",
+      //"lastXWeeksExt",
+      "nextWeekExt",
+      //"nextXWeeksExt",
 
       // Months
       'currentMonth',
       'lastMonth',
-      //"lastXMonthsDatetime",
+      //"lastXMonthsExt",
       'nextMonth',
-      //"nextXMonthsDatetime",
+      //"nextXMonthsExt",
 
       // Quarters
       'currentQuarter',
       'lastQuarter',
-      //"lastXQuartersDatetime",
-      "nextQuarterDatetime",
-      //"nextXQuartersDatetime",
+      //"lastXQuartersExt",
+      // "nextQuarterExt",
+      //"nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
-      //"lastXYearsDatetime",
-      "nextYearDatetime",
-      //"nextXYearsDatetime",
+      //"lastXYearsExt",
+      // "nextYearExt",
+      //"nextXYearsExt",
 
       // Misc
       'isEmpty',

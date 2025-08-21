@@ -4,43 +4,44 @@ define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/
     searchTypeList = [
       // Common
       'today',
-      "yesterdayDatetime",
-      "tomorrowDatetime",
+      "yesterdayExt",
+      "tomorrowExt",
 
       // Days
       'lastSevenDays',
+      'lastSevenDaysExt',
       'lastXDays',
       'nextXDays',
       'olderThanXDays',
       'afterXDays',
 
       // Weeks
-      'currentWeekDatetime',
-      "lastWeekDatetime",
-      //"lastXWeeksDatetime",
-      "nextWeekDatetime",
-      //"nextXWeeksDatetime",
+      'currentWeekExt',
+      "lastWeekExt",
+      //"lastXWeeksExt",
+      "nextWeekExt",
+      //"nextXWeeksExt",
 
       // Months
       'currentMonth',
       'lastMonth',
-      //"lastXMonthsDatetime",
+      //"lastXMonthsExt",
       'nextMonth',
-      //"nextXMonthsDatetime",
+      //"nextXMonthsExt",
 
       // Quarters
       'currentQuarter',
       'lastQuarter',
-      //"lastXQuartersDatetime",
-      "nextQuarterDatetime",
-      //"nextXQuartersDatetime",
+      //"lastXQuartersExt",
+      // "nextQuarterExt",
+      //"nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
-      //"lastXYearsDatetime",
-      "nextYearDatetime",
-      //"nextXYearsDatetime",
+      //"lastXYearsExt",
+      // "nextYearExt",
+      //"nextXYearsExt",
 
       // Misc
       'isEmpty',
