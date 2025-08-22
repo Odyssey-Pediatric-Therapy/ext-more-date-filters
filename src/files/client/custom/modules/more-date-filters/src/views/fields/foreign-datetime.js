@@ -4,6 +4,9 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
 
     searchTypeList = [
       // Common
+      'ever',
+      'past',
+      'future',
       'today',
       "yesterdayExt",
       "tomorrowExt",
@@ -48,9 +51,6 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
 
       // Misc
       'isEmpty',
-      'ever',
-      'past',
-      'future',
       'on',
       'after',
       'before',
