@@ -4,6 +4,9 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
 
     searchTypeList = [
       // Common
+      'ever',
+      'past',
+      'future',
       'today',
       "yesterdayExt",
       "tomorrowExt",
@@ -46,9 +49,6 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
 
       // Misc
       'isEmpty',
-      'ever',
-      'past',
-      'future',
       'on',
       'after',
       'before',

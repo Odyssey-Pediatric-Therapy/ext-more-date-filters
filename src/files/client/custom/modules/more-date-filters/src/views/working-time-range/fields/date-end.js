@@ -4,6 +4,9 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
     searchTypeList = [
       // Common
+      'ever',
+      'past',
+      'future',
       'today',
       "yesterdayExt",
       "tomorrowExt",
@@ -46,9 +49,6 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
       // Misc
       'isEmpty',
-      'ever',
-      'past',
-      'future',
       'on',
       'after',
       'before',

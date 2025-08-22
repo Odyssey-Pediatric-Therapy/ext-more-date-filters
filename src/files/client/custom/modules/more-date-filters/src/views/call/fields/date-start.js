@@ -1,8 +1,12 @@
 define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields/date-start'], Dep => {
+
   return class extends Dep {
 
     searchTypeList = [
       // Common
+      'ever',
+      'past',
+      'future',
       'today',
       "yesterdayExt",
       "tomorrowExt",
@@ -45,9 +49,6 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
 
       // Misc
       'isEmpty',
-      'ever',
-      'past',
-      'future',
       'on',
       'after',
       'before',
