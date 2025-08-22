@@ -31,7 +31,7 @@ class NextWeek implements ItemConverter
     $local = new DateTimeZone($this->config->get("timeZone", "America/Denver"));
     $today = new DateTime("today", $local);
 
-    $nextWeek = (clone $today)->modify("+1 week");
+    $nextWeek = (clone $today)->modify("+7 days");
 
     list($from, $to) = $this->core->getWeekStartEnd(anchor: $nextWeek);
 

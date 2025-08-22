@@ -31,7 +31,7 @@ class LastWeek implements ItemConverter
     $local = new DateTimeZone($this->config->get("timeZone", "America/Denver"));
     $today = new DateTime("today", $local);
 
-    $lastWeek = (clone $today)->modify("-1 week");
+    $lastWeek = (clone $today)->modify("-7 days");
 
     list($from, $to) = $this->core->getWeekStartEnd(anchor: $lastWeek);
 
