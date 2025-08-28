@@ -15,39 +15,37 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
-      // 'lastXDaysExt',
       'nextXDays',
-      // 'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
       // Weeks
       'currentWeekExt',
       "lastWeekExt",
-      // "lastXWeeksExt",
+      "lastXWeeksExt",
       "nextWeekExt",
-      //"nextXWeeksExt",
+      "nextXWeeksExt",
 
       // Months
       'currentMonth',
       'lastMonth',
-      //"lastXMonthsExt",
+      "lastXMonthsExt",
       'nextMonth',
-      //"nextXMonthsExt",
+      "nextXMonthsExt",
 
       // Quarters
       'currentQuarter',
       'lastQuarter',
-      //"lastXQuartersExt",
+      "lastXQuartersExt",
       "nextQuarterExt",
-      //"nextXQuartersExt",
+      "nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
-      //"lastXYearsExt",
+      "lastXYearsExt",
       "nextYearExt",
-      //"nextXYearsExt",
+      "nextXYearsExt",
 
       // Misc
       'isEmpty',

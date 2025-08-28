@@ -22,30 +22,30 @@ define('more-date-filters:views/meeting/fields/date-end', ['crm:views/meeting/fi
       // Weeks
       'currentWeekExt',
       "lastWeekExt",
-      //"lastXWeeksExt",
+      "lastXWeeksExt",
       "nextWeekExt",
-      //"nextXWeeksExt",
+      "nextXWeeksExt",
 
       // Months
       'currentMonth',
       'lastMonth',
-      //"lastXMonthsExt",
+      "lastXMonthsExt",
       'nextMonth',
-      //"nextXMonthsExt",
+      "nextXMonthsExt",
 
       // Quarters
       'currentQuarter',
       'lastQuarter',
-      //"lastXQuartersExt",
+      "lastXQuartersExt",
       "nextQuarterExt",
-      //"nextXQuartersExt",
+      "nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
-      //"lastXYearsExt",
+      "lastXYearsExt",
       "nextYearExt",
-      //"nextXYearsExt",
+      "nextXYearsExt",
 
       // Misc
       'isEmpty',

@@ -4,6 +4,9 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
 
     searchTypeList = [
       // Common
+      'ever',
+      'past',
+      'future',
       'today',
       "yesterdayExt",
       "tomorrowExt",
@@ -12,45 +15,40 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
-      // 'lastXDaysExt',
       'nextXDays',
-      // 'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
       // Weeks
       'currentWeekExt',
       "lastWeekExt",
-      // "lastXWeeksExt",
+      "lastXWeeksExt",
       "nextWeekExt",
-      //"nextXWeeksExt",
+      "nextXWeeksExt",
 
       // Months
       'currentMonth',
       'lastMonth',
-      //"lastXMonthsExt",
+      "lastXMonthsExt",
       'nextMonth',
-      //"nextXMonthsExt",
+      "nextXMonthsExt",
 
       // Quarters
       'currentQuarter',
       'lastQuarter',
-      //"lastXQuartersExt",
+      "lastXQuartersExt",
       "nextQuarterExt",
-      //"nextXQuartersExt",
+      "nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
-      //"lastXYearsExt",
+      "lastXYearsExt",
       "nextYearExt",
-      //"nextXYearsExt",
+      "nextXYearsExt",
 
       // Misc
       'isEmpty',
-      'ever',
-      'past',
-      'future',
       'on',
       'after',
       'before',
