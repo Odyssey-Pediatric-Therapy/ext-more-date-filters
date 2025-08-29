@@ -25,6 +25,10 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
       "lastXWeeksExt",
       "nextWeekExt",
       "nextXWeeksExt",
+      "upToNextXWeeksExt",
+      "afterNextXWeeksExt",
+      "upToLastXWeeksExt",
+      "afterLastXWeeksExt",
 
       // Months
       'currentMonth',

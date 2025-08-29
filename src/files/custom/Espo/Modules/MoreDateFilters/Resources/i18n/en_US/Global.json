@@ -18,7 +18,11 @@
             "nextXYearsExt": "Next X Years",
             "nextYearExt": "Next Year",
             "yesterdayExt": "Yesterday",
-            "tomorrowExt": "Tomorrow"
+            "tomorrowExt": "Tomorrow",
+            "upToNextXWeeksExt": "Up to Next X Weeks",
+            "afterNextXWeeksExt": "After Next X Weeks",
+            "upToLastXWeeksExt": "Up to Last X Weeks",
+            "afterLastXWeeksExt": "After Last X Weeks"
         }
     }
 }

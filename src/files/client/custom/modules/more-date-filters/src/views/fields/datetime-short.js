@@ -25,6 +25,10 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
       "lastXWeeksExt",
       "nextWeekExt",
       "nextXWeeksExt",
+      "upToNextXWeeksExt",
+      "afterNextXWeeksExt",
+      "upToLastXWeeksExt",
+      "afterLastXWeeksExt",
 
       // Months
       'currentMonth',

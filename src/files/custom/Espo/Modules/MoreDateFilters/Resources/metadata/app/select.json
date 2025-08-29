@@ -17,6 +17,10 @@
         "nextXYearsExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXYears",
         "nextYearExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextYear",
         "yesterdayExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Yesterday",
-        "tomorrowExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Tomorrow"
+        "tomorrowExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Tomorrow",
+        "upToNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToNextXWeeks",
+        "afterNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterNextXWeeks",
+        "upToLastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToLastXWeeks",
+        "afterLastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterLastXWeeks"
     }
 }

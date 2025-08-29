@@ -25,6 +25,10 @@ define('more-date-filters:views/meeting/fields/date-end', ['crm:views/meeting/fi
       "lastXWeeksExt",
       "nextWeekExt",
       "nextXWeeksExt",
+      "upToNextXWeeksExt",
+      "afterNextXWeeksExt",
+      "upToLastXWeeksExt",
+      "afterLastXWeeksExt",
 
       // Months
       'currentMonth',
