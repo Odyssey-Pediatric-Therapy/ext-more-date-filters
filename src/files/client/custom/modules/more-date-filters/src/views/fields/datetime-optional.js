@@ -58,5 +58,31 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
       'before',
       'between',
     ]
+
+    searchWithAdditionalNumberTypeList  = [
+      // Days
+      'lastXDays',
+      'nextXDays',
+      'olderThanXDays',
+      'afterXDays',
+
+      // Weeks
+      "lastXWeeksExt",
+      "nextXWeeksExt",
+      "lastXMonthsExt",
+      "nextXMonthsExt",
+      "upToNextXWeeksExt",
+      "afterNextXWeeksExt",
+      "upToLastXWeeksExt",
+      "afterLastXWeeksExt",
+
+      // Quarters
+      "lastXQuartersExt",
+      "nextXQuartersExt",
+
+      // Years
+      "lastXYearsExt",
+      "nextXYearsExt",
+    ]
   }
 })

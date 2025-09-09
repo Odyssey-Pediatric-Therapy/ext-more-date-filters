@@ -58,5 +58,31 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
       'before',
       'between',
     ]
+
+    searchWithAdditionalNumberTypeList  = [
+      // Days
+      'lastXDays',
+      'nextXDays',
+      'olderThanXDays',
+      'afterXDays',
+
+      // Weeks
+      "lastXWeeksExt",
+      "nextXWeeksExt",
+      "lastXMonthsExt",
+      "nextXMonthsExt",
+      "upToNextXWeeksExt",
+      "afterNextXWeeksExt",
+      "upToLastXWeeksExt",
+      "afterLastXWeeksExt",
+
+      // Quarters
+      "lastXQuartersExt",
+      "nextXQuartersExt",
+
+      // Years
+      "lastXYearsExt",
+      "nextXYearsExt",
+    ]
   }
 })

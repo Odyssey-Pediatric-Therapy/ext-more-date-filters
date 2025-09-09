@@ -8,7 +8,6 @@ use DateTimeZone;
 use Espo\Core\Select\Where\Item;
 use Espo\Core\Select\Where\ItemConverter;
 use Espo\Core\Utils\Config;
-use Espo\Core\Utils\Log;
 use Espo\Core\Utils\Metadata;
 use Espo\Core\Utils\DateTime as DateTimeUtil;
 use Espo\ORM\Query\Part\WhereClause;
@@ -24,7 +23,6 @@ class AfterNextXWeeks implements ItemConverter
     private string $entityType,
     private Config $config,
     private Core $core,
-    private Log $log,
     private Metadata $metadata,
   ) {}
 
@@ -50,8 +48,6 @@ class AfterNextXWeeks implements ItemConverter
     $where = [
       $attribute . '>=' => $to->format($format),
     ];
-
-    $this->log->debug("AfterNextXWeeks: " . json_encode($where), []);
 
     return WhereClause::fromRaw($where);
   }
