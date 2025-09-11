@@ -11,11 +11,21 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
       "yesterdayExt",
       "tomorrowExt",
 
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
@@ -60,9 +70,19 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
     ]
 
     searchWithAdditionalNumberTypeList  = [
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 

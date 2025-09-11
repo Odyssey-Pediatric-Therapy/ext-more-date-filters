@@ -19,6 +19,69 @@ class CoreTest extends TestCase
     $this->core = new Core();
   }
 
+  public function testGetFullMinute_datetime(): void {
+    $cases = array(
+      ["2025-08-10 14:30:45", "UTC",            "2025-08-10 14:30:00", "2025-08-10 14:31:00", 0],
+      ["2025-08-10 14:30:45", "UTC",            "2025-08-10 14:30:00", "2025-08-10 14:32:00", 1],
+      ["2025-08-10 14:30:45", "UTC",            "2025-08-10 14:30:00", "2025-08-10 14:35:00", 4],
+      ["2024-12-31 23:59:59", "UTC",            "2024-12-31 23:59:00", "2025-01-01 00:00:00", 0],
+      ["2024-12-31 23:59:59", "UTC",            "2024-12-31 23:59:00", "2025-01-01 00:01:00", 1],
+      ["2025-03-09 01:59:30", "America/Denver", "2025-03-09 08:59:00", "2025-03-09 09:00:00", 0],
+      ["2025-03-09 01:59:30", "America/Denver", "2025-03-09 08:59:00", "2025-03-09 09:01:00", 1],
+      ["2025-11-02 01:59:30", "America/Denver", "2025-11-02 07:59:00", "2025-11-02 09:00:00", 0],
+      ["2025-11-02 01:59:30", "America/Denver", "2025-11-02 07:59:00", "2025-11-02 09:01:00", 1],
+      ["2024-12-31 23:59:59", "America/Denver", "2025-01-01 06:59:00", "2025-01-01 07:00:00", 0],
+      ["2024-12-31 23:59:59", "America/Denver", "2025-01-01 06:59:00", "2025-01-01 07:01:00", 1],
+    );
+
+    foreach($cases as [$datetime, $timezone, $start, $end, $addlMinutes]) {
+      $anchor = new DateTime("$datetime", new DateTimeZone($timezone));
+
+      list($from, $to) = $this->core->getFullMinute(
+        anchor: $anchor,
+        addlMinutes: $addlMinutes
+      );
+
+      $this->assertEquals($start, $from->format("Y-m-d H:i:s"));
+      $this->assertEquals($end, $to->format("Y-m-d H:i:s"));
+      $this->assertEquals("UTC", $from->getTimezone()->getName());
+      $this->assertEquals("UTC", $to->getTimezone()->getName());
+    }
+  }
+
+  public function testGetFullHour_datetime(): void {
+    $cases = array(
+      ["2025-08-10 14:30:45", "UTC",            "2025-08-10 14:00:00", "2025-08-10 15:00:00", 0],
+      ["2025-08-10 14:30:45", "UTC",            "2025-08-10 14:00:00", "2025-08-10 16:00:00", 1],
+      ["2025-08-10 14:30:45", "UTC",            "2025-08-10 14:00:00", "2025-08-10 19:00:00", 4],
+      ["2024-12-31 23:59:59", "UTC",            "2024-12-31 23:00:00", "2025-01-01 00:00:00", 0],
+      ["2024-12-31 23:59:59", "UTC",            "2024-12-31 23:00:00", "2025-01-01 02:00:00", 2],
+      ["2025-03-09 01:30:00", "America/Denver", "2025-03-09 08:00:00", "2025-03-09 09:00:00", 0],
+      ["2025-03-09 01:30:00", "America/Denver", "2025-03-09 08:00:00", "2025-03-09 09:00:00", 1],
+      ["2025-03-09 01:30:00", "America/Denver", "2025-03-09 08:00:00", "2025-03-09 10:00:00", 2],
+      ["2025-03-09 01:30:00", "America/Denver", "2025-03-09 08:00:00", "2025-03-09 11:00:00", 3],
+      ["2025-03-09 01:30:00", "America/Denver", "2025-03-09 08:00:00", "2025-03-09 12:00:00", 4],
+      ["2025-11-02 01:30:00", "America/Denver", "2025-11-02 07:00:00", "2025-11-02 09:00:00", 0],
+      ["2025-11-02 01:30:00", "America/Denver", "2025-11-02 07:00:00", "2025-11-02 10:00:00", 1],
+      ["2024-12-31 23:59:59", "America/Denver", "2025-01-01 06:00:00", "2025-01-01 07:00:00", 0],
+      ["2024-12-31 23:59:59", "America/Denver", "2025-01-01 06:00:00", "2025-01-01 09:00:00", 2],
+    );
+
+    foreach($cases as [$datetime, $timezone, $start, $end, $addlHours]) {
+      $anchor = new DateTime("$datetime", new DateTimeZone($timezone));
+
+      list($from, $to) = $this->core->getFullHour(
+        anchor: $anchor,
+        addlHours: $addlHours
+      );
+
+      $this->assertEquals($start, $from->format("Y-m-d H:i:s"));
+      $this->assertEquals($end, $to->format("Y-m-d H:i:s"));
+      $this->assertEquals("UTC", $from->getTimezone()->getName());
+      $this->assertEquals("UTC", $to->getTimezone()->getName());
+    }
+  }
+
   public function testGetWeekStartEnd_date(): void {
     $cases = array(
       ["2025-08-10", "UTC",            "2025-08-10", "2025-08-17", 0],

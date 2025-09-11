@@ -11,11 +11,21 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
       "yesterdayExt",
       "tomorrowExt",
 
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
@@ -62,7 +72,9 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
     searchWithAdditionalNumberTypeList  = [
       // Days
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 

@@ -21,6 +21,10 @@
         "upToNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToNextXWeeks",
         "afterNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterNextXWeeks",
         "upToLastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToLastXWeeks",
-        "afterLastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterLastXWeeks"
+        "afterLastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterLastXWeeks",
+        "lastXMinutesExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXMinutes",
+        "nextXMinutesExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXMinutes",
+        "lastXHoursExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXHours",
+        "nextXHoursExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXHours"
     }
 }

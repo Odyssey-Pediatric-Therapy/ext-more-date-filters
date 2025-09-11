@@ -11,11 +11,21 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
       "yesterdayExt",
       "tomorrowExt",
 
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
@@ -60,9 +70,19 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
     ]
 
     searchWithAdditionalNumberTypeList  = [
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 

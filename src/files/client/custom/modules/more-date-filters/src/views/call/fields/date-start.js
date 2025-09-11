@@ -11,11 +11,21 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
       "yesterdayExt",
       "tomorrowExt",
 
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
@@ -60,9 +70,19 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
     ]
 
     searchWithAdditionalNumberTypeList  = [
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 

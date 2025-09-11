@@ -14,6 +14,28 @@ class Core
     return [$from, $to];
   }
 
+  public function getFullMinute(DateTime $anchor, int $addlMinutes = 0): array {
+    $from = clone $anchor;
+    $from->setTime((int) $from->format("H"), (int) $from->format("i"), 0);
+
+    $to = clone $from;
+    $minutes = 1 + $addlMinutes;
+    $to->modify("+{$minutes} minute");
+
+    return $this->convert($from, $to);
+  }
+
+  public function getFullHour(DateTime $anchor, int $addlHours = 0): array {
+    $from = clone $anchor;
+    $from->setTime((int) $from->format("H"), 0, 0);
+
+    $to = clone $from;
+    $hours = 1 + $addlHours;
+    $to->modify("+{$hours} hour");
+
+    return $this->convert($from, $to);
+  }
+
   public function getFullDay(DateTime $anchor, int $addlDays = 0): array {
     $from = clone $anchor;
     $from->setTime(0, 0);

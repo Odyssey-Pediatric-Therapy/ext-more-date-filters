@@ -15,7 +15,9 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
@@ -62,7 +64,9 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
     searchWithAdditionalNumberTypeList  = [
       // Days
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
