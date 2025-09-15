@@ -4,6 +4,7 @@ namespace Espo\Modules\MoreDateFilters\Services;
 
 use DateTime;
 use DateTimeZone;
+use DateInterval;
 
 class Core
 {
@@ -20,7 +21,8 @@ class Core
 
     $to = clone $from;
     $minutes = 1 + $addlMinutes;
-    $to->modify("+{$minutes} minute");
+    #DateInterval instead of modify to avoid DST gaps
+    $to->add(new DateInterval("PT{$minutes}M"));
 
     return $this->convert($from, $to);
   }
@@ -31,7 +33,8 @@ class Core
 
     $to = clone $from;
     $hours = 1 + $addlHours;
-    $to->modify("+{$hours} hour");
+    #DateInterval instead of modify to avoid DST gaps
+    $to->add(new DateInterval("PT{$hours}H"));
 
     return $this->convert($from, $to);
   }
