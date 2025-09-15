@@ -16,15 +16,15 @@ Main difference between existing filters and the ones in this extension:
 A categorized table of all of the filters that are available in the extension (includes some, but not all, built-in filters)
 
 | Filter Category | Built-in Filter(s) | Extension Filter(s) |
-|-----------------|------------------|-------------------|
-| Minutes         |                  | Last X Minutes<br>Next X Minutes  |
-| Hours           | — | [`lastXHoursExt`](#last-x-hours), [`nextXHoursExt`](#next-x-hours) |
-| Days            | `today`, `lastSevenDays`, `lastXDays`, `nextXDays`, `olderThanXDays`, `afterXDays` | [`yesterdayExt`](#yesterday), [`tomorrowExt`](#tomorrow), [`lastSevenDaysExt`](#last-seven-days), [`lastXDaysExt`](#last-x-days), [`nextXDaysExt`](#next-x-days) |
-| Weeks           | — | [`currentWeekExt`](#current-week), [`lastWeekExt`](#last-week), [`lastXWeeksExt`](#last-x-weeks), [`nextWeekExt`](#next-week), [`nextXWeeksExt`](#next-x-weeks), [`upToNextXWeeksExt`](#up-to-next-x-weeks), [`afterNextXWeeksExt`](#after-next-x-weeks), [`upToLastXWeeksExt`](#up-to-last-x-weeks), [`afterLastXWeeksExt`](#after-last-x-weeks) |
-| Months          | `currentMonth`, `lastMonth`, `nextMonth` | [`lastXMonthsExt`](#last-x-months), [`nextXMonthsExt`](#next-x-months) |
-| Quarters        | `currentQuarter`, `lastQuarter` | [`lastXQuartersExt`](#last-x-quarters), [`nextQuarterExt`](#next-quarter), [`nextXQuartersExt`](#next-x-quarters) |
-| Years           | `currentYear`, `lastYear` | [`lastXYearsExt`](#last-x-years), [`nextYearExt`](#next-year), [`nextXYearsExt`](#next-x-years) |
-| Misc            | `ever`, `past`, `future`, `isEmpty`, `on`, `notOn`, `after`, `before`, `between` | — |
+|-----------------|--------------------|---------------------|
+| Minutes         |                    | [Last X Minutes](#last-x-minutes)<br>[Next X Minutes](#next-x-minutes) |
+| Hours           | —                  | [Last X Hours](#last-x-hours)<br>[Next X Hours](#next-x-hours) |
+| Days            | Today<br>Last Seven Days<br>Last X Days<br>Next X Days<br>Older Than X Days<br>After X Days | [Yesterday](#yesterday)<br>[Tomorrow](#tomorrow)<br>[Last Seven Days](#last-seven-days)<br>[Last X Days](#last-x-days)<br>[Next X Days](#next-x-days) |
+| Weeks           | —                  | [Current Week](#current-week)<br>[Last Week](#last-week)<br>[Last X Weeks](#last-x-weeks)<br>[Next Week](#next-week)<br>[Next X Weeks](#next-x-weeks)<br>[Up to Next X Weeks](#up-to-next-x-weeks)<br>[After Next X Weeks](#after-next-x-weeks)<br>[Up To Last X Weeks](#up-to-last-x-weeks)<br>[After Last X Weeks](#after-last-x-weeks) |
+| Months          | Current Month<br>Last Month<br>Next Month | [Last X Months](#last-x-months)<br>[Next X Months](#next-x-months) |
+| Quarters        | Current Quarter<br>Last Quarter | [Last X Quarters](#last-x-quarters)<br>[Next Quarter](#next-quarter)<br>[Next X Quarters](#next-x-quarters) |
+| Years           | CurrentYear<br>Last Year | [Last X Years](#last-x-years)<br>[Next Year](#next-year)<br>[Next X Years](#next-x-years) |
+| Misc            | Ever<br>Past<br>Future<br>Is Empty<br>On<br>Not On<br>After<br>Before<br>Between | — |
 
 ## 3. Behavior Details per Filter
 
@@ -56,10 +56,10 @@ Example, where now = "2025-09-09 12:00:22"
 ```yml
 nextXMinutes X=8 (excludes current minute):
 
-[=======][=======][=======][=======][=======][=======][=======][=======][=======])
-   ^     ^                                                                       ^
-NOW        Start of next minute                                     Start of the 9th minute
-(12:00:22)  (12:01:00)                                                      (12:09:00)
+|=======|=======|=======|=======|=======|=======|=======|=======|=======|
+   ^    ^                                                               ^
+NOW        Start                                                       End
+(12:00:22) (12:01:00)                                               (12:09:00)
 ```
 
 ---
@@ -74,11 +74,10 @@ Example, where now = "2025-09-09 12:22:22"
 ```yml
 lastXHoursExt X=3 (excludes current hour):
 
-[=======][=======][=======])[=======]
-^                          ^    ^
-Start of           Start of      NOW
-3 hours ago      current hour    (12:22:22)
-(09:00:00)          (12:00:00)
+|=======|=======|=======|=======|
+^                       ^   ^
+Start                  End  NOW
+(09:00:00)       (12:00:00) (12:22:22)
 ```
 
 ---
@@ -93,10 +92,10 @@ Example, where now = "2025-09-09 12:22:22"
 ```yml
 nextXHoursExt X=3 (excludes current hour):
 
-[=======][=======][=======][=======])
-   ^     ^                          ^
-NOW     Start of next hour        Start of the 4th hour
-(12:22:22)   (13:00:00)                   (16:00:00)
+|=======|=======|=======|=======|
+   ^    ^                       ^
+NOW        Start               End
+(12:22:22) (13:00:00)       (16:00:00)
 ```
 
 ### Yesterday
@@ -111,20 +110,19 @@ Example, where today = "2025-09-09 12:22:22"
 ```yml
 lastXDays X=1 (includes today and NOW):
 
-[============================][=========|==================]
-^                             ^         ^
-Start of day          Start of today   NOW
-(2025-09-08)          (2025-09-09)    (2025-09-09)
-(00:00:00)             (00:00:00)      (12:22:22)
+|============================|=========|==================|
+^                                          ^
+Start                                     End (NOW)
+(2025-09-08 00:00:00)              (2025-09-09 12:22:22)
 
 
 
 yesterdayExt (yesterday only):
 
-[============================])
-^                             ^
-Start of yesterday       Start of today
-(2025-09-08 00:00)      (2025-09-09 00:00)
+|============================|
+^                            ^
+Start                       End
+(2025-09-08 00:00:00)      (2025-09-09 00:00:00)
 
 ```
 
@@ -140,20 +138,20 @@ Example, where today = "2025-09-09 12:22:22"
 ```yml
 nextXDays X=1 (includes today + tomorrow):
 
-[=========|==================][============================]
-          ^                   ^                            ^
-        NOW               Start of Tomorrow            End of Tomorrow
-      (12:22:22)          (2025-09-10 00:00)       (2025-09-10 23:59:59)
+|=========|==================|============================|
+          ^                                               ^
+      Start (NOW)                                        End
+(2025-09-09 12:22:22)                           (2025-09-10 23:59:59)
 
 
 
 
                               tomorrowExt (tomorrow only):
 
-                              [============================])
-                              ^                             ^
-                          Start of Tomorrow             Start of day after Tomorrow
-                         (2025-09-10 00:00)               (2025-09-11 00:00)
+                             |============================|
+                             ^                            ^
+                           Start                         End
+                     (2025-09-10 00:00)           (2025-09-11 00:00)
 ```
 
 ---
@@ -168,20 +166,20 @@ Example, where today = "2025-09-09"
 ```yml
 lastSevenDays (includes today):
 
-[=======][=======][=======][=======][=======][=======][=======][=======]
-^                                                                      ^
-Start 7 days ago                                                    End of today
-(2025-09-02 00:00)                                                  (2025-09-09 23:59)
+|=======|=======|=======|=======|=======|=======|=======|=======|
+^                                                               ^
+Start                                                          End
+(2025-09-02 00:00)                                      (2025-09-09 23:59)
 
 
 
 
 lastSevenDaysExt (excludes today):
 
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start 7 days ago                                               Start of today
-(2025-09-02 00:00)                                             (2025-09-09 00:00)
+|=======|=======|=======|=======|=======|=======|=======|
+^                                                       ^
+Start                                                  End
+(2025-09-02 00:00)                              (2025-09-09 00:00)
 
 ```
 
@@ -199,20 +197,20 @@ Example, where today = "2025-09-09 12:22:22"
 ```yml
 lastXDays X=3 (includes today and NOW):
 
-[==================][==================][==================][=========|=======]
-^                                                           ^         ^
-Start of day                                      Start of today      NOW
-(2025-09-06 00:00:00)                         2025-09-09 00:00:00)    (2025-09-09 12:22:22)
+|==================|==================|==================|==================|
+^                                                                  ^
+Start                                                           End (NOW)
+(2025-09-06 00:00:00)                                     (2025-09-09 12:22:22)
 
 
 
 
 lastXDaysExt X=3 (excludes today and NOW):
 
-[==================][==================][==================])[=========|=======]
-^                                                           ^          ^
-Start of day                                      Start of today       NOW
-(2025-09-06 00:00:00)                         2025-09-09 00:00:00)     (2025-09-09 12:22:22)
+|==================|==================|==================|==================|
+^                                                        ^
+Start                                                   End
+(2025-09-06 00:00:00)                          (2025-09-09 00:00:00)
 ```
 
 ---
@@ -229,18 +227,18 @@ Example, where today = "2025-09-09 12:22:22"
 ```yml
 nextXDays X=3 (includes today and NOW):
 
-[=========|==================][==================][==================][==================]
-          ^                   ^                                                          ^
-        NOW               Start of Next Day                                    End of 3rd Day
-      (12:22:22)          (2025-09-10 00:00)                             (2025-09-12 23:59:59)
+|==================|==================|==================|==================|
+      ^                                                                     ^
+  Start (NOW)                                                              End
+  (12:22:22)                                                      (2025-09-12 23:59:59)
 
 
 nextXDaysExt X=3 (excludes today and NOW):
 
-[=========|==================][==================][==================][==================])
-          ^                   ^                                                           ^
-        NOW               Start of Next Day                                    Start of 4th Day
-      (12:22:22)          (2025-09-10 00:00)                             (2025-09-13 00:00:00)
+|==================|==================|==================|==================|
+                   ^                                                        ^
+                 Start                                                     End
+           (2025-09-10 00:00)                                    (2025-09-13 00:00:00)
 ```
 
 ### Current Week
@@ -252,12 +250,12 @@ Example, where today = "2025-09-09"
 ```yml
 currentWeekExt (full week, anchored):
 
-   S        M        T        W        Th        F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                     ^                                        ^
-|           Today (2025-09-09)                                 |
-Start of week (Sunday)                            Start of next week (Sunday)
-(2025-09-07 00:00)                                 (2025-09-14 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^                     ^                                 ^
+|           Today (2025-09-09)                          |
+Start (Sunday)                                         End
+(2025-09-07 00:00)                              (2025-09-14 00:00)
 ```
 
 ---
@@ -271,17 +269,17 @@ Example, where today = "2025-09-09"
 ```yml
 lastWeekExt (full week, anchored):
 
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of last week (Sunday)                                 Start of this week (Sunday)
-(2025-08-31 00:00)                                         (2025-09-07 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^                                                       ^
+Start (Sunday)                                         End
+(2025-08-31 00:00)                              (2025-09-07 00:00)
 
 
-   S        M        T
-[=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 ```
 
 ---
@@ -297,27 +295,27 @@ Example, where today = "2025-09-09"
 lastXWeeksExt X=2 (full 2-week period, anchored):
 
 X=2 Weeks Ago:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 2-week period (Sunday)                              Start of last week (Sunday)
-(2025-08-24 00:00)                                         (2025-08-31 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^
+Start of X=2
+(2025-08-24 00:00)
 
 
 X=1 Weeks Ago:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 1-week period (Sunday)                                 Start of this week (Sunday)
-(2025-08-31 00:00)                                         (2025-09-07 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^                                                       ^
+Start of X=1                                    End of X=1 and X=2
+(2025-08-31 00:00)                              (2025-09-07 00:00)
 
 
 Current Week:
 
-   S        M        T
-[=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 ```
 
 ---
@@ -331,18 +329,18 @@ Example, where today = "2025-09-09"
 ```yml
 nextWeekExt (full week, anchored):
 
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 
 
 
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of next week (Sunday)                                 Start of the week after next (Sunday)
-2025-09-14 00:00)                                         (2025-09-21 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^                                                       ^
+Start                                                  End
+2025-09-14 00:00)                               (2025-09-21 00:00)
 
 ```
 
@@ -360,28 +358,28 @@ nextXWeeksExt X=2 (full 2-week period, anchored):
 
 Current Week:
 
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 
 
 
 X=1 Weeks In the Future:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 1-week period (Sunday)                              Start of the week after next (Sunday)
-(2025-09-14 00:00)                                         (2025-09-21 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^                                                       ^
+Start of X=1 and X=2                                End of X=1
+(2025-09-14 00:00)                              (2025-09-21 00:00)
 
 
 
 X=2 Weeks In the Future:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 2-week period (Sunday)                              Start of the week after the week after next (Sunday)
-(2025-09-21 00:00)                                      (2025-09-28 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                    End of X=2
+                                                (2025-09-28 00:00)
 ```
 
 ---
@@ -396,33 +394,33 @@ Example, where today = "2025-09-09"
 ```yml
 upToNextXWeeksExt X=2 (full 2-week period, anchored):
 
-Lower bound: -∞
+Start: -∞
 
 
 Current Week:
 
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 
 
 
 X=1 Weeks In the Future:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 1-week period (Sunday)                              Start of the week after next (Sunday)
-(2025-09-14 00:00)                                         (2025-09-21 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                    End of X=1
+                                                (2025-09-21 00:00)
 
 
 
 X=2 Weeks In the Future:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 2-week period (Sunday)                              Start of the week after the week after next (Sunday)
-(2025-09-21 00:00)                                      (2025-09-28 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                    End of X=2
+                                                (2025-09-28 00:00)
 ```
 
 ---
@@ -439,31 +437,31 @@ afterNextXWeeksExt X=2 (full 2-week period, anchored):
 
 Current Week:
 
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 
 
 
 X=1 Weeks In the Future:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 1-week period (Sunday)                              Start of the week after next (Sunday)
-(2025-09-14 00:00)                                         (2025-09-21 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                   Start of X=1
+                                                (2025-09-21 00:00)
 
 
 
 X=2 Weeks In the Future:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 2-week period (Sunday)                              Start of the week after the week after next (Sunday)
-(2025-09-21 00:00)                                      (2025-09-28 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                   Start of X=2
+                                                (2025-09-28 00:00)
 
 
-Upper bound: +∞
+End: +∞
 
 ```
 
@@ -480,31 +478,31 @@ Example, where today = "2025-09-09"
 ```yml
 upToLastXWeeksExt X=2 (full 2-week period, anchored):
 
-Lower bound: -∞
+Start: -∞
 
 
 X=2 Weeks Ago:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 2-week period (Sunday)                              Start of last week (Sunday)
-(2025-08-24 00:00)                                         (2025-08-31 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^
+End of X=2
+(2025-08-24 00:00)
 
 
 X=1 Weeks Ago:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 1-week period (Sunday)                                 Start of this week (Sunday)
-(2025-08-31 00:00)                                         (2025-09-07 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^
+End of X=1
+(2025-08-31 00:00)
 
 
 Current Week:
 
-   S        M        T
-[=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 ```
 
 ---
@@ -513,37 +511,37 @@ Current Week:
 
 Example, where today = "2025-09-09"
 
-- afterLastXWeeksExt X=1 would get you any dates matching this condition: `>= 2025-08-31` (everything after the start of the last full week)
-- afterLastXWeeksExt X=2 would get you any dates matching this condition: `>= 2025-08-24` (everything after the start of the last 2 full weeks)
+- afterLastXWeeksExt X=1 would get you any dates matching this condition: `>= 2025-09-07` (everything after the end of the last full week)
+- afterLastXWeeksExt X=2 would get you any dates matching this condition: `>= 2025-08-31` (everything after the end of the last 2 full weeks)
 
 ```yml
 afterLastXWeeksExt X=2 (full 2-week period, anchored):
 
 X=2 Weeks Ago:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 2-week period (Sunday)                              Start of last week (Sunday)
-(2025-08-24 00:00)                                         (2025-08-31 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                   Start of X=2
+                                                (2025-08-31 00:00)
 
 
 X=1 Weeks Ago:
-   S        M        T        W        Th       F        Sa
-[=======][=======][=======][=======][=======][=======][=======])
-^                                                              ^
-Start of 1-week period (Sunday)                                 Start of this week (Sunday)
-(2025-08-31 00:00)                                         (2025-09-07 00:00)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                   Start of X=1
+                                                (2025-09-07 00:00)
 
 
 Current Week:
 
-   S        M        T
-[=======][=======][=======]
-                     ^
-               Today (2025-09-09)
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            Today (2025-09-09)
 
 
-Upper bound: +∞
+End: +∞
 
 ```
 
@@ -562,26 +560,26 @@ lastXMonthsExt X=2 (full month, anchored):
 
 X=2 Months Ago:
 
-[========================================================])
-^                                                         ^
-Start of month (01)                                 Start of last month (01)
-(2025-07-01 00:00)                                (2025-08-01 00:00)
+|========================================================|
+^
+Start of X=2
+(2025-07-01 00:00)
 
 
 
 X=1 Months Ago:
 
-[========================================================])
-^                                                         ^
-Start of month (01)                                Start of this month (01)
-(2025-08-01 00:00)                                (2025-09-01 00:00)
+|========================================================|
+^                                                        ^
+Start X=1                                        End of X=1 and X=2
+(2025-08-01 00:00)                               (2025-09-01 00:00)
 
 
 Current Month:
 
-[========================================================]
-                        ^
-                      Today (2025-09-09)
+|========================================================|
+                 ^
+         Today (2025-09-09)
 ```
 
 ---
@@ -598,27 +596,27 @@ nextXMonthsExt X=2 (full month, anchored):
 
 Current Month:
 
-[========================================================]
-                        ^
-                      Today (2025-09-09)
+|========================================================|
+                 ^
+         Today (2025-09-09)
 
 
 
 X=1 Months In the Future:
 
-[========================================================])
-^                                                         ^
-Start of next month (01)                                 Start of the month after next (01)
-(2025-10-01 00:00)                                (2025-11-01 00:00)
+|========================================================|
+^                                                        ^
+Start of X=1 and X=2                                 End of X=1
+(2025-10-01 00:00)                               (2025-11-01 00:00)
 
 
 
 X=2 Months In the Future:
 
-[========================================================])
-^                                                         ^
-Start of the month after next (01)                  Start of the month after the month after next  (01)
-(2025-11-01 00:00)                                (2025-12-01 00:00)
+|========================================================|
+                                                         ^
+                                                     End of X=2
+                                                 (2025-12-01 00:00)
 ```
 
 ---
@@ -636,30 +634,30 @@ lastXQuartersExt X=2 (anchored quarters, divided into months):
 X=2 Quarters Ago:
 
  Jan          Feb           Mar
-[===========|===========|===========])
-^                                    ^
-Start of quarter            Start of last quarter
- (2025-01-01)                (2025-04-01)
+|===========|===========|===========|
+^
+Start of X=2
+(2025-01-01)
 
 
 
 X=1 Quarters Ago:
 
  Apr          May           Jun
-[===========|===========|===========])
-^                                    ^
-Start of quarter            Start of this quarter
- (2025-04-01)                (2025-07-01)
+|===========|===========|===========|
+^                                   ^
+Start of X=1                End of X=1 and X=2
+(2025-04-01)                   (2025-07-01)
 
 
 
 Current Quarter:
 
  Jul          Aug           Sep
-[===========|===========|===========])
+|===========|===========|===========|
 ^                             ^
-Start of quarter       Today (2025-09-09)
- (2025-07-01)
+Start of quarter      Today (2025-09-09)
+(2025-07-01)
 ```
 
 ---
@@ -677,31 +675,30 @@ nextXQuartersExt X=2 (anchored quarters, divided into months):
 Current Quarter:
 
  Jul          Aug           Sep
-[===========|===========|===========])
+|===========|===========|===========|
 ^                             ^
-Start of quarter       Today (2025-09-09)
- (2025-07-01)
+Start of quarter      Today (2025-09-09)
+(2025-07-01)
 
 
 
 X=1 Quarters In the Future:
 
  Oct          Nov           Dec
-[===========|===========|===========])
-^                                    ^
-Start next of quarter            Start of the quarter after next quarter
- (2025-10-01)                (2026-01-01)
+|===========|===========|===========|
+^                                   ^
+Start of X=1 and X=2            End of X=1
+ (2025-10-01)                  (2026-01-01)
 
 
 
 X=2 Quarters In the Future:
 
  Jan          Feb           March
-[===========|===========|===========])
-^                                    ^
-Start of the quarter     Start of the quarter
-after next quarter        after the quarter after next
- (2026-01-01)                (2026-04-01)
+|===========|===========|===========|
+                                    ^
+                               End of X=2
+                              (2026-04-01)
 ```
 
 ---
@@ -719,24 +716,24 @@ lastXYearsExt X=2 (full year, anchored):
 
 X=2 Years Ago:
 
-[========================================================])
-^                                                         ^
-Start of year (01)                                 Start of last year (01)
-(2023-01-01 00:00)                                (2024-01-01 00:00)
+|========================================================|
+^
+Start of X=2
+(2023-01-01 00:00)
 
 
 
 X=1 Years Ago:
 
-[========================================================])
-^                                                         ^
-Start of year (01)                                Start of this year (01)
-(2024-01-01 00:00)                                (2025-01-01 00:00)
+|========================================================|
+^                                                        ^
+Start of X=1                                    End of X=1 and X=2
+(2024-01-01 00:00)                              (2025-01-01 00:00)
 
 
 Current Year:
 
-[========================================================]
+|========================================================|
                                       ^
                                     Today (2025-09-09)
 ```
@@ -755,7 +752,7 @@ nextXYearsExt X=2 (full year, anchored):
 
 Current Year:
 
-[========================================================]
+|========================================================|
                                       ^
                                     Today (2025-09-09)
 
@@ -763,17 +760,17 @@ Current Year:
 
 X=1 Years In the Future:
 
-[========================================================])
-^                                                         ^
-Start of next year (01)                                 Start of the year after next (01)
+|========================================================|
+^                                                        ^
+Start of X=1 and X=2                                 End of X=1
 (2026-01-0 00:00)                                (2027-01-01 00:00)
 
 
 
 X=2 Years In the Future:
 
-[========================================================])
-^                                                         ^
-Start of the year after next (01)                  Start of the year after the year after next  (01)
-(2027-01-01 00:00)                                (2028-01-01 00:00)
+|========================================================|
+                                                         ^
+                                                     End of X=2
+                                                 (2028-01-01 00:00)
 ```
