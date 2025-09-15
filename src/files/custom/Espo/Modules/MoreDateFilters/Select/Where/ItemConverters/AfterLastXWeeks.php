@@ -34,7 +34,7 @@ class AfterLastXWeeks implements ItemConverter
     $xValue = intval($item->getValue());
     $lastXWeeks = (clone $today)->modify("-" . ($xValue * 7) . " days");
 
-    list($from, $to) = $this->core->getWeekStartEnd(anchor: $lastXWeeks, addlWeeks: $xValue - 1);
+    list($from, $to) = $this->core->getWeekStartEnd(anchor: $lastXWeeks, addlWeeks: 0);
 
     $attribute = $item->getAttribute();
     $fieldDefs = $this->metadata->get(['entityDefs', $this->entityType, 'fields', $attribute], []);
@@ -46,7 +46,7 @@ class AfterLastXWeeks implements ItemConverter
       $format = DateTimeUtil::SYSTEM_DATE_TIME_FORMAT;
 
     $where = [
-      $attribute . '>=' => $from->format($format),
+      $attribute . '>=' => $to->format($format),
     ];
 
     return WhereClause::fromRaw($where);
