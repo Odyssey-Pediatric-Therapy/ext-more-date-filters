@@ -37,7 +37,7 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
       "nextXWeeksExt",
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
-      "upToLastXWeeksExt",
+      "afterXWeeksAgoExt",
       "beforeXWeeksAgoExt",
 
       // Months
@@ -93,7 +93,7 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
       "nextXMonthsExt",
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
-      "upToLastXWeeksExt",
+      "afterXWeeksAgoExt",
       "beforeXWeeksAgoExt",
 
       // Quarters

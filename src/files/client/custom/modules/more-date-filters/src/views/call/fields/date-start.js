@@ -37,7 +37,7 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
       "nextXWeeksExt",
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
-      "upToLastXWeeksExt",
+      "afterXWeeksAgoExt",
       "beforeXWeeksAgoExt",
 
       // Months
@@ -93,7 +93,7 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
       "nextXMonthsExt",
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
-      "upToLastXWeeksExt",
+      "afterXWeeksAgoExt",
       "beforeXWeeksAgoExt",
 
       // Quarters

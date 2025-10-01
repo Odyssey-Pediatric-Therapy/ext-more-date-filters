@@ -17,7 +17,7 @@ use Espo\ORM\Type\AttributeType;
 
 use Espo\Modules\MoreDateFilters\Services\Core;
 
-class AfterLastXWeeks implements ItemConverter
+class AfterXWeeksAgo implements ItemConverter
 {
   public function __construct(
     private string $entityType,
