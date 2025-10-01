@@ -46,7 +46,7 @@ class UpToLastXWeeks implements ItemConverter
       $format = DateTimeUtil::SYSTEM_DATE_TIME_FORMAT;
 
     $where = [
-      $attribute . '<=' => $from->format($format),
+      $attribute . '<' => $from->format($format),
     ];
 
     return WhereClause::fromRaw($where);
