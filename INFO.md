@@ -422,21 +422,19 @@ X=2 Weeks In the Future:
 
 Example, where today = "2025-09-09"
 
-- upToNextXWeeksExt X=1 would get you any dates matching this condition: `< 2025-09-21` (everything up until the end of the next full week)
-- upToNextXWeeksExt X=2 would get you any dates matching this condition: `< 2025-09-28` (everything up until the end of the next 2 full weeks)
+- upToNextXWeeksExt X=1 would get you any dates matching these conditions: `>= 2025-09-09 AND < 2025-09-21` (everything from now up until the end of the next full week)
+- upToNextXWeeksExt X=2 would get you any dates matching this condition: `>= 2025-09-09 AND < 2025-09-28` (everything from now up until the end of the next 2 full weeks)
 
 ```yml
 upToNextXWeeksExt X=2 (full 2-week period, anchored):
-
-Start: -∞
-
 
 Current Week:
 
     S       M       T       W      Th       F      Sa
 |=======|=======|=======|=======|=======|=======|=======|
                     ^
-            Today (2025-09-09)
+            Start of X=1 and X=2
+               (2025-09-09)
 
 
 
