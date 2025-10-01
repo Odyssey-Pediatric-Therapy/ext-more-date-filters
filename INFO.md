@@ -20,7 +20,7 @@ A categorized table of all of the filters that are available in the extension (i
 | Minutes         |                    | [Current Minute](#current-minute)<br>[Last X Minutes](#last-x-minutes)<br>[Next X Minutes](#next-x-minutes) |
 | Hours           | —                  | [Current Hour](#current-minute)<br>[Last X Hours](#last-x-hours)<br>[Next X Hours](#next-x-hours) |
 | Days            | Today<br>Last Seven Days<br>Last X Days<br>Next X Days<br>Older Than X Days<br>After X Days | [Yesterday](#yesterday)<br>[Tomorrow](#tomorrow)<br>[Last Seven Days](#last-seven-days)<br>[Last X Days](#last-x-days)<br>[Next X Days](#next-x-days) |
-| Weeks           | —                  | [Current Week](#current-week)<br>[Last Week](#last-week)<br>[Last X Weeks](#last-x-weeks)<br>[Next Week](#next-week)<br>[Next X Weeks](#next-x-weeks)<br>[Up to Next X Weeks](#up-to-next-x-weeks)<br>[After Next X Weeks](#after-next-x-weeks)<br>[Up To Last X Weeks](#up-to-last-x-weeks)<br>[After Last X Weeks](#after-last-x-weeks) |
+| Weeks           | —                  | [Current Week](#current-week)<br>[Last Week](#last-week)<br>[Last X Weeks](#last-x-weeks)<br>[Next Week](#next-week)<br>[Next X Weeks](#next-x-weeks)<br>[Up to Next X Weeks](#up-to-next-x-weeks)<br>[After Next X Weeks](#after-next-x-weeks)<br>[Before X Weeks Ago](#before-x-weeks-ago)<br>[After X Weeks Ago](#after-x-weeks-ago) |
 | Months          | Current Month<br>Last Month<br>Next Month | [Last X Months](#last-x-months)<br>[Next X Months](#next-x-months) |
 | Quarters        | Current Quarter<br>Last Quarter | [Last X Quarters](#last-x-quarters)<br>[Next Quarter](#next-quarter)<br>[Next X Quarters](#next-x-quarters) |
 | Years           | CurrentYear<br>Last Year | [Last X Years](#last-x-years)<br>[Next Year](#next-year)<br>[Next X Years](#next-x-years) |
@@ -499,16 +499,16 @@ End of X=1 and X=2: +∞
 
 ---
 
-### Up To Last X Weeks
+### Before X Weeks Ago
 
 Example, where today = "2025-09-09"
 
-- Up To Last X Weeks (X=1) would get you any dates matching this condition: `< 2025-08-31` (everything up until the start of the last full week)
-- Up To Last X Weeks (X=2) would get you any dates matching this condition: `< 2025-08-24` (everything up until the start of the last 2 full weeks)
+- Before X Weeks Ago (X=1) would get you any dates matching this condition: `< 2025-08-31` (everything up until the start of the last full week)
+- Before X Weeks Ago (X=2) would get you any dates matching this condition: `< 2025-08-24` (everything up until the start of the last 2 full weeks)
 
 
 ```sql
-Up To Last X Weeks X=2 (full 2-week period, anchored):
+Before X Weeks Ago X=2 (full 2-week period, anchored):
 
 Start of X=1 and X=2: -∞
 
@@ -539,15 +539,15 @@ Current Week:
 
 ---
 
-### After Last X Weeks
+### After X Weeks Ago
 
 Example, where today = "2025-09-09"
 
-- After Last X Weeks (X=1) would get you any dates matching this condition: `>= 2025-09-07` (everything after the end of the last full week)
-- After Last X Weeks (X=2) would get you any dates matching this condition: `>= 2025-08-31` (everything after the end of the last 2 full weeks)
+- After X Weeks Ago (X=1) would get you any dates matching this condition: `>= 2025-09-07` (everything after the end of the last full week)
+- After X Weeks Ago (X=2) would get you any dates matching this condition: `>= 2025-08-31` (everything after the end of the last 2 full weeks)
 
 ```sql
-After Last X Weeks X=2 (full 2-week period, anchored):
+After X Weeks Ago X=2 (full 2-week period, anchored):
 
 X=2 Weeks Ago:
     S       M       T       W      Th       F      Sa
