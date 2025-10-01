@@ -32,10 +32,10 @@ A categorized table of all of the filters that are available in the extension (i
 
 Example, where now = "2025-09-09 12:00:22"
 
-- currentMinute would get you any dates matching these conditions: `>= 2025-09-09 12:00:00 AND < 2025-09-09 12:01:00` (anchored full 1-minute block)
+- Current Minute would get you any dates matching these conditions: `>= 2025-09-09 12:00:00 AND < 2025-09-09 12:01:00` (anchored full 1-minute block)
 
-```yml
-currentMinute:
+```sql
+Current Minute:
 
 |==================================|
 ^             ^                    ^
@@ -49,11 +49,11 @@ Start        NOW                  End
 
 Example, where now = "2025-09-09 12:00:22"
 
-- lastXMinutesExt X=1 would get you any dates matching these conditions: `>= 2025-09-09 11:59 AND < 2025-09-09 12:00` (anchored full 1-minute block ending before the current minute)
-- lastXMinutesExt X=8 would get you any dates matching these conditions: `>= 2025-09-09 11:52 AND < 2025-09-09 12:00` (anchored full 8-minute block ending before the current minute)
+- Last X Minutes (X=1) would get you any dates matching these conditions: `>= 2025-09-09 11:59 AND < 2025-09-09 12:00` (anchored full 1-minute block ending before the current minute)
+- Last X Minutes (X=8) would get you any dates matching these conditions: `>= 2025-09-09 11:52 AND < 2025-09-09 12:00` (anchored full 8-minute block ending before the current minute)
 
-```yml
-lastXMinutesExt X=8 (excludes current minute):
+```sql
+Last X Minutes X=8 (excludes current minute):
 
 |=======|=======|=======|=======|=======|=======|=======|=======|=======|
 ^                                                               ^  ^
@@ -67,11 +67,11 @@ Start                                                         End  NOW
 
 Example, where now = "2025-09-09 12:00:22"
 
-- lastXMinutesExt X=1 would get you any dates matching these conditions: `>= 2025-09-09 12:01 AND < 2025-09-09 12:02` (anchored full 1-minute block starting after the current minute)
-- lastXMinutesExt X=8 would get you any dates matching these conditions: `>= 2025-09-09 12:01 AND < 2025-09-09 12:09` (anchored full 8-minute block starting after the current minute)
+- Last X Minutes (X=1) would get you any dates matching these conditions: `>= 2025-09-09 12:01 AND < 2025-09-09 12:02` (anchored full 1-minute block starting after the current minute)
+- Last X Minutes (X=8) would get you any dates matching these conditions: `>= 2025-09-09 12:01 AND < 2025-09-09 12:09` (anchored full 8-minute block starting after the current minute)
 
-```yml
-nextXMinutes X=8 (excludes current minute):
+```sql
+Next X Minutes X=8 (excludes current minute):
 
 |=======|=======|=======|=======|=======|=======|=======|=======|=======|
    ^    ^                                                               ^
@@ -85,10 +85,10 @@ NOW        Start                                                       End
 
 Example, where now = "2025-09-09 12:22:22"
 
-- currentHour would get you any dates matching these conditions: `>= 2025-09-09 12:00:00 AND < 2025-09-09 13:00:00` (anchored full 1-hour block)
+- Current Hour would get you any dates matching these conditions: `>= 2025-09-09 12:00:00 AND < 2025-09-09 13:00:00` (anchored full 1-hour block)
 
-```yml
-currentHour:
+```sql
+Current Hour:
 
 |==================================|
 ^             ^                    ^
@@ -102,11 +102,11 @@ Start        NOW                  End
 
 Example, where now = "2025-09-09 12:22:22"
 
-- lastXHoursExt X=1 would get you any dates matching these conditions: `>= 2025-09-09 11:00 AND < 2025-09-09 12:00`
-- lastXHoursExt X=3 would get you any dates matching these conditions: `>= 2025-09-09 09:00 AND < 2025-09-09 12:00`
+- Last X Hours (X=1) would get you any dates matching these conditions: `>= 2025-09-09 11:00 AND < 2025-09-09 12:00`
+- Last X Hours (X=3) would get you any dates matching these conditions: `>= 2025-09-09 09:00 AND < 2025-09-09 12:00`
 
-```yml
-lastXHoursExt X=3 (excludes current hour):
+```sql
+Last X Hours X=3 (excludes current hour):
 
 |=======|=======|=======|=======|
 ^                       ^   ^
@@ -120,11 +120,11 @@ Start                  End  NOW
 
 Example, where now = "2025-09-09 12:22:22"
 
-- nextXHoursExt X=1 would get you any dates matching these conditions: `>= 2025-09-09 13:00 AND < 2025-09-09 14:00`
-- nextXHoursExt X=3 would get you any dates matching these conditions: `>= 2025-09-09 13:00 AND < 2025-09-09 16:00`
+- Next X Hours (X=1) would get you any dates matching these conditions: `>= 2025-09-09 13:00 AND < 2025-09-09 14:00`
+- Next X Hours (X=3) would get you any dates matching these conditions: `>= 2025-09-09 13:00 AND < 2025-09-09 16:00`
 
-```yml
-nextXHoursExt X=3 (excludes current hour):
+```sql
+Next X Hours X=3 (excludes current hour):
 
 |=======|=======|=======|=======|
    ^    ^                       ^
@@ -138,11 +138,11 @@ You could search for yesterday by using lastXDays to specify 1 day, but the resu
 
 Example, where today = "2025-09-09 12:22:22"
 
-- lastXDays with X=1 would get you any dates matching these conditions: `>= 2025-09-08 AND <= 2025-09-09 12:22:22` (includes today)
-- yesterdayExt would get you any dates matching these conditions: `>= 2025-09-08 AND < 2025-09-09` (excludes today)
+- Last X Days (X=1) would get you any dates matching these conditions: `>= 2025-09-08 AND <= 2025-09-09 12:22:22` (includes today)
+- Yesterday would get you any dates matching these conditions: `>= 2025-09-08 AND < 2025-09-09` (excludes today)
 
-```yml
-lastXDays X=1 (includes today and NOW):
+```sql
+Last X Days X=1 (includes today and NOW):
 
 |============================|=========|==================|
 ^                                          ^
@@ -151,7 +151,7 @@ Start                                     End (NOW)
 
 
 
-yesterdayExt (yesterday only):
+Yesterday (yesterday only):
 
 |============================|
 ^                            ^
@@ -166,11 +166,11 @@ Start                       End
 
 Example, where today = "2025-09-09 12:22:22"
 
-- nextXDays with X=1 would get you any dates matching these conditions: `>= 2025-09-09 12:22:22 AND <= 2025-09-10 23:59:59` (includes today)
-- tomorrowExt would get you any dates matching these conditions: `>= 2025-09-10 AND < 2025-09-11` (excludes today)
+- Next X Days (X=1) would get you any dates matching these conditions: `>= 2025-09-09 12:22:22 AND <= 2025-09-10 23:59:59` (includes today)
+- Tomorrow would get you any dates matching these conditions: `>= 2025-09-10 AND < 2025-09-11` (excludes today)
 
-```yml
-nextXDays X=1 (includes today + tomorrow):
+```sql
+Next X Days X=1 (includes today + tomorrow):
 
 |=========|==================|============================|
           ^                                               ^
@@ -180,7 +180,7 @@ nextXDays X=1 (includes today + tomorrow):
 
 
 
-                              tomorrowExt (tomorrow only):
+                              Tomorrow (tomorrow only):
 
                              |============================|
                              ^                            ^
@@ -194,11 +194,11 @@ nextXDays X=1 (includes today + tomorrow):
 
 Example, where today = "2025-09-09"
 
-- lastSevenDays would get you any dates matching these conditions: `>= 2025-09-02 AND <= 2025-09-09` (includes today)
-- lastSevenDaysExt would get you any dates matching these conditions: `>= 2025-09-02 AND < 2025-09-09` (excludes today)
+- Last Seven Days would get you any dates matching these conditions: `>= 2025-09-02 AND <= 2025-09-09` (includes today)
+- Last Seven Days would get you any dates matching these conditions: `>= 2025-09-02 AND < 2025-09-09` (excludes today)
 
-```yml
-lastSevenDays (includes today):
+```sql
+Last Seven Days (includes today):
 
 |=======|=======|=======|=======|=======|=======|=======|=======|
 ^                                                               ^
@@ -208,7 +208,7 @@ Start                                                          End
 
 
 
-lastSevenDaysExt (excludes today):
+Last Seven Days (excludes today):
 
 |=======|=======|=======|=======|=======|=======|=======|
 ^                                                       ^
@@ -221,15 +221,15 @@ Start                                                  End
 
 ### Last X Days
 
-LastXDays already exists as a default filter.
+Last X Days already exists as a filter offered by the base application.
 
 Example, where today = "2025-09-09 12:22:22"
 
-- lastXDays X=3 would get you any dates matching these conditions: `>= 2025-09-06 00:00:00 AND <= 2025-09-09 12:22:22` (rolling day range, where the end date is inclusive of NOW)
-- lastXDaysExt X=3 would get you any dates matching these conditions: `>= 2025-09-06 00:00:00 AND < 2025-09-09 00:00:00` (full day, not including today or NOW)
+- Last X Days (Base) (X=3) would get you any dates matching these conditions: `>= 2025-09-06 00:00:00 AND <= 2025-09-09 12:22:22` (rolling day range, where the end date is inclusive of NOW)
+- Last X Days (Extension) (X=3) would get you any dates matching these conditions: `>= 2025-09-06 00:00:00 AND < 2025-09-09 00:00:00` (full day, not including today or NOW)
 
-```yml
-lastXDays X=3 (includes today and NOW):
+```sql
+Last X Days (Base) X=3 (includes today and NOW):
 
 |==================|==================|==================|==================|
 ^                                                                  ^
@@ -239,7 +239,7 @@ Start                                                           End (NOW)
 
 
 
-lastXDaysExt X=3 (excludes today and NOW):
+Last X Days (Extension) X=3 (excludes today and NOW):
 
 |==================|==================|==================|==================|
 ^                                                        ^
@@ -251,15 +251,15 @@ Start                                                   End
 
 ### Next X Days
 
-NextXDays already exists as a default filter.
+Next X Days already exists as a filter offered by the base application.
 
 Example, where today = "2025-09-09 12:22:22"
 
-- nextXDays X=3 would get you any dates matching these conditions: >= 2025-09-09 12:22:22 AND <= 2025-09-12 23:59:59 (range including today, starting from NOW)
-- nextXDaysExt X=3 would get you any dates matching these conditions: >= 2025-09-10 00:00:00 AND < 2025-09-13 00:00:00 (anchored full-day blocks, excluding today)
+- Next X Days (Base) (X=3) would get you any dates matching these conditions: >= 2025-09-09 12:22:22 AND <= 2025-09-12 23:59:59 (range including today, starting from NOW)
+- Next X Days (Extension) (X=3) would get you any dates matching these conditions: >= 2025-09-10 00:00:00 AND < 2025-09-13 00:00:00 (anchored full-day blocks, excluding today)
 
-```yml
-nextXDays X=3 (includes today and NOW):
+```sql
+Next X Days (Base) X=3 (includes today and NOW):
 
 |==================|==================|==================|==================|
       ^                                                                     ^
@@ -267,7 +267,7 @@ nextXDays X=3 (includes today and NOW):
    12:22:22                                                        2025-09-12 23:59:59
 
 
-nextXDaysExt X=3 (excludes today and NOW):
+Next X Days (Extension) X=3 (excludes today and NOW):
 
 |==================|==================|==================|==================|
                    ^                                                        ^
@@ -279,14 +279,14 @@ nextXDaysExt X=3 (excludes today and NOW):
 
 Example, where today = "2025-09-09"
 
-- currentWeekExt would get you any dates matching these conditions: `>= 2025-09-07 AND < 2025-09-14` (anchored full week)
+- Current Week would get you any dates matching these conditions: `>= 2025-09-07 AND < 2025-09-14` (anchored full week)
 
-```yml
-currentWeekExt (full week, anchored):
+```js
+Current Week (full week, anchored):
 
     S       M       T       W      Th       F      Sa
 |=======|=======|=======|=======|=======|=======|=======|
-^                     ^                                 ^
+^                   ^                                   ^
 |           Today (2025-09-09)                          |
 Start (Sunday)                                         End
 2025-09-07 00:00                                2025-09-14 00:00
@@ -298,10 +298,10 @@ Start (Sunday)                                         End
 
 Example, where today = "2025-09-09"
 
-- lastWeekExt would get you any dates matching these conditions: `>= 2025-08-31 AND < 2025-09-07` (anchored full week)
+- Last Week would get you any dates matching these conditions: `>= 2025-08-31 AND < 2025-09-07` (anchored full week)
 
-```yml
-lastWeekExt (full week, anchored):
+```sql
+Last Week (full week, anchored):
 
     S       M       T       W      Th       F      Sa
 |=======|=======|=======|=======|=======|=======|=======|
@@ -322,11 +322,11 @@ Start (Sunday)                                         End
 
 Example, where today = "2025-09-09"
 
-- lastXWeeksExt X=1 would get you any dates matching these conditions: `>= 2025-08-31 AND < 2025-09-07` (anchored full week)
-- lastXWeeksExt X=2 would get you any dates matching these conditions: `>= 2025-08-24 AND < 2025-09-07` (anchored full 2-week period)
+- Last X Weeks (X=1) would get you any dates matching these conditions: `>= 2025-08-31 AND < 2025-09-07` (anchored full week)
+- Last X Weeks (X=2) would get you any dates matching these conditions: `>= 2025-08-24 AND < 2025-09-07` (anchored full 2-week period)
 
-```yml
-lastXWeeksExt X=2 (full 2-week period, anchored):
+```sql
+Last X Weeks X=2 (full 2-week period, anchored):
 
 X=2 Weeks Ago:
     S       M       T       W      Th       F      Sa
@@ -358,10 +358,10 @@ Current Week:
 
 Example, where today = "2025-09-09"
 
-- nextWeekExt would get you any dates matching these conditions: `>= 2025-09-14 AND < 2025-09-21` (anchored full week)
+- Next Week would get you any dates matching these conditions: `>= 2025-09-14 AND < 2025-09-21` (anchored full week)
 
-```yml
-nextWeekExt (full week, anchored):
+```sql
+Next Week (full week, anchored):
 
     S       M       T       W      Th       F      Sa
 |=======|=======|=======|=======|=======|=======|=======|
@@ -384,11 +384,11 @@ Start                                                  End
 
 Example, where today = "2025-09-09"
 
-- nextXWeeksExt X=1 would get you any dates matching these conditions: `>= 2025-09-14 AND < 2025-09-21` (next full week)
-- nextXWeeksExt X=2 would get you any dates matching these conditions: `>= 2025-09-14 AND < 2025-09-28` (next full 2-week period)
+- Next X Weeks (X=1) would get you any dates matching these conditions: `>= 2025-09-14 AND < 2025-09-21` (next full week)
+- Next X Weeks (X=2) would get you any dates matching these conditions: `>= 2025-09-14 AND < 2025-09-28` (next full 2-week period)
 
-```yml
-nextXWeeksExt X=2 (full 2-week period, anchored):
+```sql
+Next X Weeks X=2 (full 2-week period, anchored):
 
 Current Week:
 
@@ -422,11 +422,11 @@ X=2 Weeks In the Future:
 
 Example, where today = "2025-09-09"
 
-- upToNextXWeeksExt X=1 would get you any dates matching these conditions: `>= 2025-09-09 AND < 2025-09-21` (everything from now up until the end of the next full week)
-- upToNextXWeeksExt X=2 would get you any dates matching this condition: `>= 2025-09-09 AND < 2025-09-28` (everything from now up until the end of the next 2 full weeks)
+- Up To Next X Weeks (X=1) would get you any dates matching these conditions: `>= 2025-09-09 AND < 2025-09-21` (everything from now up until the end of the next full week)
+- Up To Next X Weeks (X=2) would get you any dates matching this condition: `>= 2025-09-09 AND < 2025-09-28` (everything from now up until the end of the next 2 full weeks)
 
-```yml
-upToNextXWeeksExt X=2 (full 2-week period, anchored):
+```sql
+Up To Next X Weeks X=2 (full 2-week period, anchored):
 
 Current Week:
 
@@ -461,11 +461,11 @@ X=2 Weeks In the Future:
 
 Example, where today = "2025-09-09"
 
-- afterNextXWeeksExt X=1 would get you any dates matching this condition: `>= 2025-09-21` (everything after the end of the next full week)
-- afterNextXWeeksExt X=2 would get you any dates matching this condition: `>= 2025-09-28` (everything after the end of the next 2 full weeks)
+- After Next X Weeks (X=1) would get you any dates matching this condition: `>= 2025-09-21` (everything after the end of the next full week)
+- After Next X Weeks (X=2) would get you any dates matching this condition: `>= 2025-09-28` (everything after the end of the next 2 full weeks)
 
-```yml
-afterNextXWeeksExt X=2 (full 2-week period, anchored):
+```sql
+After Next X Weeks X=2 (full 2-week period, anchored):
 
 Current Week:
 
@@ -493,7 +493,7 @@ X=2 Weeks In the Future:
                                                  2025-09-28 00:00
 
 
-End: +∞
+End of X=1 and X=2: +∞
 
 ```
 
@@ -503,14 +503,14 @@ End: +∞
 
 Example, where today = "2025-09-09"
 
-- upToLastXWeeksExt X=1 would get you any dates matching this condition: `< 2025-08-31` (everything up until the start of the last full week)
-- upToLastXWeeksExt X=2 would get you any dates matching this condition: `< 2025-08-24` (everything up until the start of the last 2 full weeks)
+- Up To Last X Weeks (X=1) would get you any dates matching this condition: `< 2025-08-31` (everything up until the start of the last full week)
+- Up To Last X Weeks (X=2) would get you any dates matching this condition: `< 2025-08-24` (everything up until the start of the last 2 full weeks)
 
 
-```yml
-upToLastXWeeksExt X=2 (full 2-week period, anchored):
+```sql
+Up To Last X Weeks X=2 (full 2-week period, anchored):
 
-Start: -∞
+Start of X=1 and X=2: -∞
 
 
 X=2 Weeks Ago:
@@ -543,11 +543,11 @@ Current Week:
 
 Example, where today = "2025-09-09"
 
-- afterLastXWeeksExt X=1 would get you any dates matching this condition: `>= 2025-09-07` (everything after the end of the last full week)
-- afterLastXWeeksExt X=2 would get you any dates matching this condition: `>= 2025-08-31` (everything after the end of the last 2 full weeks)
+- After Last X Weeks (X=1) would get you any dates matching this condition: `>= 2025-09-07` (everything after the end of the last full week)
+- After Last X Weeks (X=2) would get you any dates matching this condition: `>= 2025-08-31` (everything after the end of the last 2 full weeks)
 
-```yml
-afterLastXWeeksExt X=2 (full 2-week period, anchored):
+```sql
+After Last X Weeks X=2 (full 2-week period, anchored):
 
 X=2 Weeks Ago:
     S       M       T       W      Th       F      Sa
@@ -573,7 +573,7 @@ Current Week:
             Today (2025-09-09)
 
 
-End: +∞
+End of X=1 and X=2: +∞
 
 ```
 
@@ -583,11 +583,11 @@ End: +∞
 
 Example, where today = "2025-09-09"
 
-- lastXMonthsExt X=1 would get you any dates matching these conditions: `>= 2025-08-01 AND < 2025-09-01` (anchored full month)
-- lastXMonthsExt X=2 would get you any dates matching these conditions: `>= 2025-07-01 AND < 2025-09-01` (anchored full 2-month period)
+- Last X Months (X=1) would get you any dates matching these conditions: `>= 2025-08-01 AND < 2025-09-01` (anchored full month)
+- Last X Months (X=2) would get you any dates matching these conditions: `>= 2025-07-01 AND < 2025-09-01` (anchored full 2-month period)
 
-```yml
-lastXMonthsExt X=2 (full month, anchored):
+```sql
+Last X Months X=2 (full month, anchored):
 
 
 X=2 Months Ago:
@@ -620,11 +620,11 @@ Current Month:
 
 Example, where today = "2025-09-09"
 
-- nextXMonthsExt X=1 would get you any dates matching these conditions: `>= 2025-10-01 AND < 2025-11-01` (anchored full month)
-- nextXMonthsExt X=2 would get you any dates matching these conditions: `>= 2025-10-01 AND < 2025-12-01` (anchored full 2-month period)
+- Next X Months (X=1) would get you any dates matching these conditions: `>= 2025-10-01 AND < 2025-11-01` (anchored full month)
+- Next X Months (X=2) would get you any dates matching these conditions: `>= 2025-10-01 AND < 2025-12-01` (anchored full 2-month period)
 
-```yml
-nextXMonthsExt X=2 (full month, anchored):
+```sql
+Next X Months X=2 (full month, anchored):
 
 Current Month:
 
@@ -657,11 +657,11 @@ X=2 Months In the Future:
 
 Example, where today = "2025-09-09"
 
-- lastXQuartersExt X=1 would get you any dates matching these conditions: `>= 2025-04-01 AND < 2025-07-01` (anchored full quarter)
-- lastXQuartersExt X=2 would get you any dates matching these conditions: `>= 2025-01-01 AND < 2025-07-01` (anchored full 2-quarter period)
+- Last X Quarters (X=1) would get you any dates matching these conditions: `>= 2025-04-01 AND < 2025-07-01` (anchored full quarter)
+- Last X Quarters (X=2) would get you any dates matching these conditions: `>= 2025-01-01 AND < 2025-07-01` (anchored full 2-quarter period)
 
-```yml
-lastXQuartersExt X=2 (anchored quarters, divided into months):
+```sql
+Last X Quarters X=2 (anchored quarters, divided into months):
 
 X=2 Quarters Ago:
 
@@ -698,11 +698,11 @@ Start of quarter      Today (2025-09-09)
 
 Example, where today = "2025-09-09"
 
-- nextXQuartersExt X=1 would get you any dates matching these conditions: `>= 2025-10-01 AND < 2026-01-01` (anchored full quarter)
-- nextXQuartersExt X=2 would get you any dates matching these conditions: `>= 2025-10-01 AND < 2026-04-01` (anchored full 2-quarter period)
+- Next X Quarters (X=1) would get you any dates matching these conditions: `>= 2025-10-01 AND < 2026-01-01` (anchored full quarter)
+- Next X Quarters (X=2) would get you any dates matching these conditions: `>= 2025-10-01 AND < 2026-04-01` (anchored full 2-quarter period)
 
-```yml
-nextXQuartersExt X=2 (anchored quarters, divided into months):
+```sql
+Next X Quarters X=2 (anchored quarters, divided into months):
 
 Current Quarter:
 
@@ -739,11 +739,11 @@ X=2 Quarters In the Future:
 
 Example, where today = "2025-09-09"
 
-- lastXYearsExt X=1 would get you any dates matching these conditions: `>= 2024-01-01 AND < 2025-01-01`
-- lastXYearsExt X=2 would get you any dates matching these conditions: `>= 2023-01-01 AND < 2025-01-01`
+- Last X Years (X=1) would get you any dates matching these conditions: `>= 2024-01-01 AND < 2025-01-01`
+- Last X Years (X=2) would get you any dates matching these conditions: `>= 2023-01-01 AND < 2025-01-01`
 
-```yml
-lastXYearsExt X=2 (full year, anchored):
+```sql
+Last X Years X=2 (full year, anchored):
 
 
 X=2 Years Ago:
@@ -776,11 +776,11 @@ Current Year:
 
 Example, where today = "2025-09-09"
 
-- nextXYearsExt X=1 would get you any dates matching these conditions: `>= 2026-01-01 AND < 2027-01-01`
-- nextXYearsExt X=2 would get you any dates matching these conditions: `>= 2026-01-01 AND < 2028-01-01`
+- Next X Years (X=1) would get you any dates matching these conditions: `>= 2026-01-01 AND < 2027-01-01`
+- Next X Years (X=2) would get you any dates matching these conditions: `>= 2026-01-01 AND < 2028-01-01`
 
-```yml
-nextXYearsExt X=2 (full year, anchored):
+```sql
+Next X Years X=2 (full year, anchored):
 
 Current Year:
 
