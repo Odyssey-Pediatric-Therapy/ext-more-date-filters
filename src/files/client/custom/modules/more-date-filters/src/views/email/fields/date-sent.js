@@ -38,7 +38,7 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
@@ -94,7 +94,7 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Quarters
       "lastXQuartersExt",

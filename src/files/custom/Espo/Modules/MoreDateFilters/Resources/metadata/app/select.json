@@ -21,7 +21,7 @@
         "upToNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToNextXWeeks",
         "afterNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterNextXWeeks",
         "upToLastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToLastXWeeks",
-        "afterLastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterLastXWeeks",
+        "beforeXWeeksAgoExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\BeforeXWeeksAgo",
         "lastXMinutesExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXMinutes",
         "nextXMinutesExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXMinutes",
         "lastXHoursExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXHours",

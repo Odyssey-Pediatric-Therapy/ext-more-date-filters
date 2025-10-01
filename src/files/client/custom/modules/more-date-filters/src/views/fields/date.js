@@ -28,7 +28,7 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
@@ -76,7 +76,7 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Quarters
       "lastXQuartersExt",

@@ -38,7 +38,7 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
@@ -94,7 +94,7 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Quarters
       "lastXQuartersExt",

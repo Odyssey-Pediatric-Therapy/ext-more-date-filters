@@ -22,7 +22,7 @@
             "upToNextXWeeksExt": "Up to Next X Weeks",
             "afterNextXWeeksExt": "After Next X Weeks",
             "upToLastXWeeksExt": "Up to Last X Weeks",
-            "afterLastXWeeksExt": "After Last X Weeks",
+            "beforeXWeeksAgoExt": "Before X Weeks Ago",
             "lastXMinutesExt": "Last X Minutes",
             "nextXMinutesExt": "Next X Minutes",
             "lastXHoursExt": "Last X Hours",

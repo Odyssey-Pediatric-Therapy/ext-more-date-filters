@@ -38,7 +38,7 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
@@ -86,7 +86,7 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
       "upToNextXWeeksExt",
       "afterNextXWeeksExt",
       "upToLastXWeeksExt",
-      "afterLastXWeeksExt",
+      "beforeXWeeksAgoExt",
 
       // Quarters
       "lastXQuartersExt",
