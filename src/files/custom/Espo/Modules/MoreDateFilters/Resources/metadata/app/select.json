@@ -17,6 +17,14 @@
         "nextXYearsExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXYears",
         "nextYearExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextYear",
         "yesterdayExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Yesterday",
-        "tomorrowExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Tomorrow"
+        "tomorrowExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\Tomorrow",
+        "upToNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToNextXWeeks",
+        "afterNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterNextXWeeks",
+        "afterXWeeksAgoExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterXWeeksAgo",
+        "beforeXWeeksAgoExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\BeforeXWeeksAgo",
+        "lastXMinutesExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXMinutes",
+        "nextXMinutesExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXMinutes",
+        "lastXHoursExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXHours",
+        "nextXHoursExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXHours"
     }
 }

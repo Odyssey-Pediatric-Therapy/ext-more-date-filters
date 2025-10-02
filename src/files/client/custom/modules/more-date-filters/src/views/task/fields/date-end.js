@@ -11,41 +11,55 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
       "yesterdayExt",
       "tomorrowExt",
 
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
       // Days
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
+      'lastXDaysExt',
       'nextXDays',
+      'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
       // Weeks
       'currentWeekExt',
       "lastWeekExt",
-      //"lastXWeeksExt",
+      "lastXWeeksExt",
       "nextWeekExt",
-      //"nextXWeeksExt",
+      "nextXWeeksExt",
+      "upToNextXWeeksExt",
+      "afterNextXWeeksExt",
+      "afterXWeeksAgoExt",
+      "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
       'lastMonth',
-      //"lastXMonthsExt",
+      "lastXMonthsExt",
       'nextMonth',
-      //"nextXMonthsExt",
+      "nextXMonthsExt",
 
       // Quarters
       'currentQuarter',
       'lastQuarter',
-      //"lastXQuartersExt",
+      "lastXQuartersExt",
       "nextQuarterExt",
-      //"nextXQuartersExt",
+      "nextXQuartersExt",
 
       // Years
       'currentYear',
       'lastYear',
-      //"lastXYearsExt",
+      "lastXYearsExt",
       "nextYearExt",
-      //"nextXYearsExt",
+      "nextXYearsExt",
 
       // Misc
       'isEmpty',
@@ -53,6 +67,42 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
       'after',
       'before',
       'between',
+    ]
+
+    searchWithAdditionalNumberTypeList  = [
+      //Minutes
+      'lastXMinutesExt',
+      'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'nextXHoursExt',
+
+      // Days
+      'lastXDays',
+      'lastXDaysExt',
+      'nextXDays',
+      'nextXDaysExt',
+      'olderThanXDays',
+      'afterXDays',
+
+      // Weeks
+      "lastXWeeksExt",
+      "nextXWeeksExt",
+      "lastXMonthsExt",
+      "nextXMonthsExt",
+      "upToNextXWeeksExt",
+      "afterNextXWeeksExt",
+      "afterXWeeksAgoExt",
+      "beforeXWeeksAgoExt",
+
+      // Quarters
+      "lastXQuartersExt",
+      "nextXQuartersExt",
+
+      // Years
+      "lastXYearsExt",
+      "nextXYearsExt",
     ]
   }
 })

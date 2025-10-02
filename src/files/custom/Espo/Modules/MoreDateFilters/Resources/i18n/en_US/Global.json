@@ -4,21 +4,29 @@
             "currentWeekExt": "Current Week",
             "lastSevenDaysExt": "Last 7 Days (excl. Today)",
             "lastWeekExt": "Last Week",
-            "lastXDaysExt": "Last X Days",
+            "lastXDaysExt": "Last X Days (excl. Today)",
             "lastXMonthsExt": "Last X Months",
             "lastXQuartersExt": "Last X Quarters",
             "lastXWeeksExt": "Last X Weeks",
             "lastXYearsExt": "Last X Years",
             "nextQuarterExt": "Next Quarter",
             "nextWeekExt": "Next Week",
-            "nextXDaysExt": "Next X Days",
+            "nextXDaysExt": "Next X Days (excl. Today)",
             "nextXMonthsExt": "Next X Months",
             "nextXQuartersExt": "Next X Quarters",
             "nextXWeeksExt": "Next X Weeks",
             "nextXYearsExt": "Next X Years",
             "nextYearExt": "Next Year",
             "yesterdayExt": "Yesterday",
-            "tomorrowExt": "Tomorrow"
+            "tomorrowExt": "Tomorrow",
+            "upToNextXWeeksExt": "Up to Next X Weeks",
+            "afterNextXWeeksExt": "After Next X Weeks",
+            "afterXWeeksAgoExt": "After X Weeks Ago",
+            "beforeXWeeksAgoExt": "Before X Weeks Ago",
+            "lastXMinutesExt": "Last X Minutes",
+            "nextXMinutesExt": "Next X Minutes",
+            "lastXHoursExt": "Last X Hours",
+            "nextXHoursExt": "Next X Hours"
         }
     }
 }

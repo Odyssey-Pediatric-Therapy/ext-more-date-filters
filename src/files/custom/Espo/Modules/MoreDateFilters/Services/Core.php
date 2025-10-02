@@ -4,6 +4,7 @@ namespace Espo\Modules\MoreDateFilters\Services;
 
 use DateTime;
 use DateTimeZone;
+use DateInterval;
 
 class Core
 {
@@ -12,6 +13,30 @@ class Core
     $to->setTimezone(new DateTimeZone('UTC'));
 
     return [$from, $to];
+  }
+
+  public function getFullMinute(DateTime $anchor, int $addlMinutes = 0): array {
+    $from = clone $anchor;
+    $from->setTime((int) $from->format("H"), (int) $from->format("i"), 0);
+
+    $to = clone $from;
+    $minutes = 1 + $addlMinutes;
+    #DateInterval instead of modify to avoid DST gaps
+    $to->add(new DateInterval("PT{$minutes}M"));
+
+    return $this->convert($from, $to);
+  }
+
+  public function getFullHour(DateTime $anchor, int $addlHours = 0): array {
+    $from = clone $anchor;
+    $from->setTime((int) $from->format("H"), 0, 0);
+
+    $to = clone $from;
+    $hours = 1 + $addlHours;
+    #DateInterval instead of modify to avoid DST gaps
+    $to->add(new DateInterval("PT{$hours}H"));
+
+    return $this->convert($from, $to);
   }
 
   public function getFullDay(DateTime $anchor, int $addlDays = 0): array {
