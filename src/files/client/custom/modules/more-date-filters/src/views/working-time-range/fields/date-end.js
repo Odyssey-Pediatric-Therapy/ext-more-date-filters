@@ -68,6 +68,8 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

@@ -68,6 +68,8 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

@@ -68,6 +68,8 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

@@ -68,6 +68,8 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

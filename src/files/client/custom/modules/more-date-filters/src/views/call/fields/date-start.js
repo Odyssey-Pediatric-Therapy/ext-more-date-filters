@@ -68,6 +68,8 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

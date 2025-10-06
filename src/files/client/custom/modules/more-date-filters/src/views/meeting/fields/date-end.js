@@ -68,6 +68,8 @@ define('more-date-filters:views/meeting/fields/date-end', ['crm:views/meeting/fi
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

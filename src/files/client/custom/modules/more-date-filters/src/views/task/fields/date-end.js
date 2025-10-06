@@ -68,6 +68,8 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

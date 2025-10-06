@@ -52,6 +52,8 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",

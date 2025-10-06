@@ -23,6 +23,8 @@
             "nextXMonthsExt": "Next X Months",
             "nextXQuartersExt": "Next X Quarters",
             "nextXWeeksExt": "Next X Weeks",
+            "currentYearPastExt": "Current Year (Past)",
+            "currentYearFutureExt": "Current Year (Future)",
             "nextXYearsExt": "Next X Years",
             "nextYearExt": "Next Year",
             "yesterdayExt": "Yesterday",
