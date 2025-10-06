@@ -37,6 +37,8 @@ define('more-date-filters:views/meeting/fields/date-end', ['crm:views/meeting/fi
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",

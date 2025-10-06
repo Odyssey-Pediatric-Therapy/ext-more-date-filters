@@ -37,6 +37,8 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",

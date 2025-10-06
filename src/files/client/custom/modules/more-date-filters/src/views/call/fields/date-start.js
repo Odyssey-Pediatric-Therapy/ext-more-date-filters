@@ -37,6 +37,8 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",

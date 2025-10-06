@@ -41,6 +41,8 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
 
       // Weeks
       'currentWeekExt',
+      "currentWeekPastExt",
+      "currentWeekFutureExt",
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",

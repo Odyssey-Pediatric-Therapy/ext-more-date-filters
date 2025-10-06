@@ -37,6 +37,8 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",

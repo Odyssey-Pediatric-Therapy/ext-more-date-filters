@@ -37,6 +37,8 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",

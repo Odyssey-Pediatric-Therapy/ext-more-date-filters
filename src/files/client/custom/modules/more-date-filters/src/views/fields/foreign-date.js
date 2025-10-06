@@ -21,6 +21,8 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
 
       // Weeks
       'currentWeekExt',
+      "currentWeekPastExt",
+      "currentWeekFutureExt",
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",

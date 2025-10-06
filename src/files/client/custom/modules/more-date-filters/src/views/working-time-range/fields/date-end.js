@@ -37,6 +37,8 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",
