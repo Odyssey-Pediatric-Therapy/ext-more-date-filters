@@ -10,17 +10,17 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
       "tomorrowExt",
 
       //Minutes
-      'lastXMinutesExt',
       'currentMinuteExt',
       'currentMinutePastExt',
       'currentMinuteFutureExt',
+      'lastXMinutesExt',
       'nextXMinutesExt',
 
       //Hours
-      'lastXHoursExt',
       'currentHourExt',
       'currentHourPastExt',
       'currentHourFutureExt',
+      'lastXHoursExt',
       'nextXHoursExt',
 
       // Days

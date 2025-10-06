@@ -10,17 +10,17 @@ define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/
       "tomorrowExt",
 
       //Minutes
-      'lastXMinutesExt',
       'currentMinuteExt',
       'currentMinutePastExt',
       'currentMinuteFutureExt',
+      'lastXMinutesExt',
       'nextXMinutesExt',
 
       //Hours
-      'lastXHoursExt',
       'currentHourExt',
       'currentHourPastExt',
       'currentHourFutureExt',
+      'lastXHoursExt',
       'nextXHoursExt',
 
       // Days

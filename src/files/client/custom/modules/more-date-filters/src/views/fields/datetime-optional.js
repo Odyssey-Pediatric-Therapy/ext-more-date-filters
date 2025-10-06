@@ -10,17 +10,17 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
       "tomorrowExt",
 
       //Minutes
-      'lastXMinutesExt',
       'currentMinuteExt',
       'currentMinutePastExt',
       'currentMinuteFutureExt',
+      'lastXMinutesExt',
       'nextXMinutesExt',
 
       //Hours
-      'lastXHoursExt',
       'currentHourExt',
       'currentHourPastExt',
       'currentHourFutureExt',
+      'lastXHoursExt',
       'nextXHoursExt',
 
       // Days

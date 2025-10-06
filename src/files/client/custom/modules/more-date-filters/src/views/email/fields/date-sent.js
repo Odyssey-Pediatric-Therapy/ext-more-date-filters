@@ -10,17 +10,17 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
       "tomorrowExt",
 
       //Minutes
-      'lastXMinutesExt',
       'currentMinuteExt',
       'currentMinutePastExt',
       'currentMinuteFutureExt',
+      'lastXMinutesExt',
       'nextXMinutesExt',
 
       //Hours
-      'lastXHoursExt',
       'currentHourExt',
       'currentHourPastExt',
       'currentHourFutureExt',
+      'lastXHoursExt',
       'nextXHoursExt',
 
       // Days

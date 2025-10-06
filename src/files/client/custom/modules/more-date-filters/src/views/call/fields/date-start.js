@@ -10,17 +10,17 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
       "tomorrowExt",
 
       //Minutes
-      'lastXMinutesExt',
       'currentMinuteExt',
       'currentMinutePastExt',
       'currentMinuteFutureExt',
+      'lastXMinutesExt',
       'nextXMinutesExt',
 
       //Hours
-      'lastXHoursExt',
       'currentHourExt',
       'currentHourPastExt',
       'currentHourFutureExt',
+      'lastXHoursExt',
       'nextXHoursExt',
 
       // Days
@@ -30,7 +30,6 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
       'lastSevenDaysExt',
       'lastXDays',
       'lastXDaysExt',
-      'nextXDays',
       'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
