@@ -9,6 +9,8 @@
             "lastSevenDaysExt": "Last 7 Days (excl. Today)",
             "lastWeekExt": "Last Week",
             "lastXDaysExt": "Last X Days (excl. Today)",
+            "currentMonthPastExt": "Current Month (Past)",
+            "currentMonthFutureExt": "Current Month (Future)",
             "lastXMonthsExt": "Last X Months",
             "lastXQuartersExt": "Last X Quarters",
             "lastXWeeksExt": "Last X Weeks",

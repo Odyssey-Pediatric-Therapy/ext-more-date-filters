@@ -23,10 +23,6 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
       'currentHourFutureExt',
       'nextXHoursExt',
 
-      //Hours
-      'lastXHoursExt',
-      'nextXHoursExt',
-
       // Days
       'todayPastExt',
       'todayFutureExt',
@@ -54,6 +50,8 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',

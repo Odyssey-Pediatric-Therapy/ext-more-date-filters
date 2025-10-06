@@ -8,6 +8,8 @@
         "lastSevenDaysExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastSevenDays",
         "lastWeekExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastWeek",
         "lastXDaysExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXDays",
+        "currentMonthPastExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentMonthPast",
+        "currentMonthFutureExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentMonthFuture",
         "lastXMonthsExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXMonths",
         "lastXQuartersExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXQuarters",
         "lastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXWeeks",

@@ -50,6 +50,8 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',

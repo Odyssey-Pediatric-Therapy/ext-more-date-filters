@@ -50,6 +50,8 @@ define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',

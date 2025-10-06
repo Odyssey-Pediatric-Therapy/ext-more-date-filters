@@ -50,6 +50,8 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',
