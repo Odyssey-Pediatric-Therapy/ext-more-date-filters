@@ -1,4 +1,4 @@
-define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep => {
+define('more-date-filters:views/fields/datetime-short', ['views/fields/datetime-short'], Dep => {
   return class extends Dep {
     searchTypeList = [
       // Common
