@@ -1,7 +1,5 @@
 define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/fields/date-start'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -13,10 +11,16 @@ define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/
 
       //Minutes
       'lastXMinutesExt',
+      'currentMinuteExt',
+      'currentMinutePastExt',
+      'currentMinuteFutureExt',
       'nextXMinutesExt',
 
       //Hours
       'lastXHoursExt',
+      'currentHourExt',
+      'currentHourPastExt',
+      'currentHourFutureExt',
       'nextXHoursExt',
 
       // Days

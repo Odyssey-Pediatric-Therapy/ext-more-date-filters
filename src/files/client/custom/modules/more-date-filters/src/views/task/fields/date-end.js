@@ -1,7 +1,5 @@
 define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/date-end'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -13,10 +11,16 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
 
       //Minutes
       'lastXMinutesExt',
+      'currentMinuteExt',
+      'currentMinutePastExt',
+      'currentMinuteFutureExt',
       'nextXMinutesExt',
 
       //Hours
       'lastXHoursExt',
+      'currentHourExt',
+      'currentHourPastExt',
+      'currentHourFutureExt',
       'nextXHoursExt',
 
       // Days

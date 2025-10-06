@@ -1,7 +1,5 @@
 define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-date'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',

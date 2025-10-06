@@ -1,7 +1,5 @@
 define('more-date-filters:views/working-time-range/fields/date-end', ['views/working-time-range/fields/date-end'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -13,10 +11,16 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
       //Minutes
       'lastXMinutesExt',
+      'currentMinuteExt',
+      'currentMinutePastExt',
+      'currentMinuteFutureExt',
       'nextXMinutesExt',
 
       //Hours
       'lastXHoursExt',
+      'currentHourExt',
+      'currentHourPastExt',
+      'currentHourFutureExt',
       'nextXHoursExt',
 
       // Days

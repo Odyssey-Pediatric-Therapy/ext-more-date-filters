@@ -1,7 +1,5 @@
 define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/date-sent'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -13,10 +11,16 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
 
       //Minutes
       'lastXMinutesExt',
+      'currentMinuteExt',
+      'currentMinutePastExt',
+      'currentMinuteFutureExt',
       'nextXMinutesExt',
 
       //Hours
       'lastXHoursExt',
+      'currentHourExt',
+      'currentHourPastExt',
+      'currentHourFutureExt',
       'nextXHoursExt',
 
       // Days

@@ -24,8 +24,14 @@
             "afterXWeeksAgoExt": "After X Weeks Ago",
             "beforeXWeeksAgoExt": "Before X Weeks Ago",
             "lastXMinutesExt": "Last X Minutes",
+            "currentMinuteExt": "Current Minute",
+            "currentMinutePastExt": "Current Minute (Past)",
+            "currentMinuteFutureExt": "Current Minute (Future)",
             "nextXMinutesExt": "Next X Minutes",
             "lastXHoursExt": "Last X Hours",
+            "currentHourExt": "Current Hour",
+            "currentHourPastExt": "Current Hour (Past)",
+            "currentHourFutureExt": "Current Hour (Future)",
             "nextXHoursExt": "Next X Hours"
         }
     }

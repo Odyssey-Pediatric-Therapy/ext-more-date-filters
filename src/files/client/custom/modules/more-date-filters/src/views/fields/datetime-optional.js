@@ -1,7 +1,5 @@
 define('more-date-filters:views/fields/datetime-optional', ['views/fields/datetime-optional'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -13,7 +11,17 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
 
       //Minutes
       'lastXMinutesExt',
+      'currentMinuteExt',
+      'currentMinutePastExt',
+      'currentMinuteFutureExt',
       'nextXMinutesExt',
+
+      //Hours
+      'lastXHoursExt',
+      'currentHourExt',
+      'currentHourPastExt',
+      'currentHourFutureExt',
+      'nextXHoursExt',
 
       //Hours
       'lastXHoursExt',
