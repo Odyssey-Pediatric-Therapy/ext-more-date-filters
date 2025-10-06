@@ -59,6 +59,8 @@ define('more-date-filters:views/task/fields/date-end', ['crm:views/task/fields/d
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",

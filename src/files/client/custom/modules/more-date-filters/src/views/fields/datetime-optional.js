@@ -59,6 +59,8 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",

@@ -11,6 +11,8 @@
         "currentMonthPastExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentMonthPast",
         "currentMonthFutureExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentMonthFuture",
         "lastXMonthsExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXMonths",
+        "currentQuarterPastExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentQuarterPast",
+        "currentQuarterFutureExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentQuarterFuture",
         "lastXQuartersExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXQuarters",
         "lastXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXWeeks",
         "lastXYearsExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXYears",

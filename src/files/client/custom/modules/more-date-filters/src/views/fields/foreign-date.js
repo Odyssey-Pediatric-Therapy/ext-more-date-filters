@@ -43,6 +43,8 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",

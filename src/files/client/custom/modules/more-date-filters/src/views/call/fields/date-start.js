@@ -59,6 +59,8 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",

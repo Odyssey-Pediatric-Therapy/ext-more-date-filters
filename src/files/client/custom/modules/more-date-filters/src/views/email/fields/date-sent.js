@@ -59,6 +59,8 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",

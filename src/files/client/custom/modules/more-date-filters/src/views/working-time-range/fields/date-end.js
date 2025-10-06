@@ -59,6 +59,8 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",

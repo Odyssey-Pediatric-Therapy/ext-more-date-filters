@@ -59,6 +59,8 @@ define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",
