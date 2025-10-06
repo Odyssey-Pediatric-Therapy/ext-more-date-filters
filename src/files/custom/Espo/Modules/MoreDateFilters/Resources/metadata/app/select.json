@@ -1,6 +1,8 @@
 {
     "whereItemConverterClassNameMap": {
         "currentWeekExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentWeek",
+        "todayPastExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\TodayPast",
+        "todayFutureExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\TodayFuture",
         "lastSevenDaysExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastSevenDays",
         "lastWeekExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastWeek",
         "lastXDaysExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\LastXDays",

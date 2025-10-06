@@ -24,6 +24,8 @@ define('more-date-filters:views/email/fields/date-sent', ['views/email/fields/da
       'nextXHoursExt',
 
       // Days
+      'todayPastExt',
+      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',

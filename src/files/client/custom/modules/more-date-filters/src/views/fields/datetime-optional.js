@@ -28,6 +28,8 @@ define('more-date-filters:views/fields/datetime-optional', ['views/fields/dateti
       'nextXHoursExt',
 
       // Days
+      'todayPastExt',
+      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',

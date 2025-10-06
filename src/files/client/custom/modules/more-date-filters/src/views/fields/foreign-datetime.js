@@ -24,6 +24,8 @@ define('more-date-filters:views/fields/foreign-datetime', ['views/fields/foreign
       'nextXHoursExt',
 
       // Days
+      'todayPastExt',
+      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',

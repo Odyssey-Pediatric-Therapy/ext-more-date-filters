@@ -24,6 +24,8 @@ define('more-date-filters:views/meeting/fields/date-start', ['crm:views/meeting/
       'nextXHoursExt',
 
       // Days
+      'todayPastExt',
+      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',

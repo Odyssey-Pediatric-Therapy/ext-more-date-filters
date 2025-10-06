@@ -2,6 +2,8 @@
     "options": {
         "dateSearchRanges": {
             "currentWeekExt": "Current Week",
+            "todayPastExt": "Today (Past)",
+            "todayFutureExt": "Today (Future)",
             "lastSevenDaysExt": "Last 7 Days (excl. Today)",
             "lastWeekExt": "Last Week",
             "lastXDaysExt": "Last X Days (excl. Today)",

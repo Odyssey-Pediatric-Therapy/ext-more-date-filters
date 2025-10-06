@@ -24,6 +24,8 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
       'nextXHoursExt',
 
       // Days
+      'todayPastExt',
+      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
