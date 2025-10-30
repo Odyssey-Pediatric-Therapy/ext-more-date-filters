@@ -30,8 +30,10 @@
             "nextWeekExt": "Next Week",
             "nextXWeeksExt": "Next X Weeks",
             "upToNextXWeeksExt": "Up to Next X Weeks",
+            "upToNextXWeeksFutureExt": "Up to Next X Weeks (Future)",
             "afterNextXWeeksExt": "After Next X Weeks",
             "afterXWeeksAgoExt": "After X Weeks Ago",
+            "afterXWeeksAgoPastExt": "After X Weeks Ago (Past)",
             "beforeXWeeksAgoExt": "Before X Weeks Ago",
 
             "currentMonthPastExt": "Current Month (Past)",

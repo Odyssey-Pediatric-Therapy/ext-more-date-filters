@@ -35,7 +35,6 @@ class UpToNextXWeeks implements ItemConverter
     $nextWeek = (clone $today)->modify("+7 days");
 
     list($from, $to) = $this->core->getWeekStartEnd(anchor: $nextWeek, addlWeeks: $xValue - 1);
-    $from = new DateTime("now");
 
     $attribute = $item->getAttribute();
     $fieldDefs = $this->metadata->get(['entityDefs', $this->entityType, 'fields', $attribute], []);
@@ -48,7 +47,6 @@ class UpToNextXWeeks implements ItemConverter
 
     $where = [
       'AND' => [
-        $attribute . '>=' => $from->format($format),
         $attribute . '<'  => $to->format($format),
       ],
     ];

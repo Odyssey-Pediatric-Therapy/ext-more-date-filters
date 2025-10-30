@@ -29,8 +29,10 @@
         "nextWeekExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextWeek",
         "nextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\NextXWeeks",
         "upToNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToNextXWeeks",
+        "upToNextXWeeksFutureExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\UpToNextXWeeksFuture",
         "afterNextXWeeksExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterNextXWeeks",
         "afterXWeeksAgoExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterXWeeksAgo",
+        "afterXWeeksAgoPastExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\AfterXWeeksAgoPast",
         "beforeXWeeksAgoExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\BeforeXWeeksAgo",
 
         "currentMonthPastExt": "Espo\\Modules\\MoreDateFilters\\Select\\Where\\ItemConverters\\CurrentMonthPast",
