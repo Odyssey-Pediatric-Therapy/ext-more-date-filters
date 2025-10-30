@@ -13,17 +13,17 @@ Main difference between existing filters and the ones in this extension:
 
 ## 2. Quick Reference Table
 
-A categorized table of all of the filters that are available in the extension (includes some, but not all, built-in filters)
+A categorized table of all of the filters that are available in the extension
 
 | Filter Category | Built-in Filter(s) | Extension Filter(s) |
 |-----------------|--------------------|---------------------|
-| Minutes         |                    | [Current Minute](#current-minute)<br>[Last X Minutes](#last-x-minutes)<br>[Next X Minutes](#next-x-minutes) |
-| Hours           | —                  | [Current Hour](#current-minute)<br>[Last X Hours](#last-x-hours)<br>[Next X Hours](#next-x-hours) |
-| Days            | Today<br>Last Seven Days<br>Last X Days<br>Next X Days<br>Older Than X Days<br>After X Days | [Yesterday](#yesterday)<br>[Tomorrow](#tomorrow)<br>[Last Seven Days](#last-seven-days)<br>[Last X Days](#last-x-days)<br>[Next X Days](#next-x-days) |
-| Weeks           | —                  | [Current Week](#current-week)<br>[Last Week](#last-week)<br>[Last X Weeks](#last-x-weeks)<br>[Next Week](#next-week)<br>[Next X Weeks](#next-x-weeks)<br>[Up to Next X Weeks](#up-to-next-x-weeks)<br>[After Next X Weeks](#after-next-x-weeks)<br>[Before X Weeks Ago](#before-x-weeks-ago)<br>[After X Weeks Ago](#after-x-weeks-ago) |
-| Months          | Current Month<br>Last Month<br>Next Month | [Last X Months](#last-x-months)<br>[Next X Months](#next-x-months) |
-| Quarters        | Current Quarter<br>Last Quarter | [Last X Quarters](#last-x-quarters)<br>[Next Quarter](#next-quarter)<br>[Next X Quarters](#next-x-quarters) |
-| Years           | CurrentYear<br>Last Year | [Last X Years](#last-x-years)<br>[Next Year](#next-year)<br>[Next X Years](#next-x-years) |
+| Minutes         |                    | [Current Minute](#current-minute)<br>[Current Minute (Past)](#current-minute-past)<br>[Current Minute (Future)](#current-minute-future)<br>[Last X Minutes](#last-x-minutes)<br>[Next X Minutes](#next-x-minutes) |
+| Hours           | —                  | [Current Hour](#current-hour)<br>[Current Hour (Past)](#current-hour-past)<br>[Current Hour (Future)](#current-hour-future)<br>[Last X Hours](#last-x-hours)<br>[Next X Hours](#next-x-hours) |
+| Days            | Today<br>Last Seven Days<br>Last X Days<br>Next X Days<br>Older Than X Days<br>After X Days | [Today (Past)](#today-past)<br>[Today (Future)](#today-future)<br>[Yesterday](#yesterday)<br>[Tomorrow](#tomorrow)<br>[Last Seven Days](#last-seven-days)<br>[Last X Days](#last-x-days)<br>[Next X Days](#next-x-days) |
+| Weeks           | —                  | [Current Week](#current-week)<br>[Current Week (Past)](#current-week-past)<br>[Current Week (Future)](#current-week-future)<br>[Last Week](#last-week)<br>[Last X Weeks](#last-x-weeks)<br>[Next Week](#next-week)<br>[Next X Weeks](#next-x-weeks)<br>[Up to Next X Weeks](#up-to-next-x-weeks)<br>[After Next X Weeks](#after-next-x-weeks)<br>[Before X Weeks Ago](#before-x-weeks-ago)<br>[After X Weeks Ago](#after-x-weeks-ago) |
+| Months          | Current Month<br>Last Month<br>Next Month | [Current Month (Past)](#current-month-past)<br>[Current Month (Future)](#current-month-future)<br>[Last X Months](#last-x-months)<br>[Next X Months](#next-x-months) |
+| Quarters        | Current Quarter<br>Last Quarter | [Current Quarter (Past)](#current-quarter-past)<br>[Current Quarter (Future)](#current-quarter-future)<br>[Last X Quarters](#last-x-quarters)<br>[Next Quarter](#next-quarter)<br>[Next X Quarters](#next-x-quarters) |
+| Years           | CurrentYear<br>Last Year | [Current Year (Past)](#current-year-past)<br>[Current Year (Future)](#current-year-future)<br>[Last X Years](#last-x-years)<br>[Next Year](#next-year)<br>[Next X Years](#next-x-years) |
 | Misc            | Ever<br>Past<br>Future<br>Is Empty<br>On<br>Not On<br>After<br>Before<br>Between | — |
 
 ## 3. Behavior Details per Filter
@@ -41,6 +41,40 @@ Current Minute:
 ^             ^                    ^
 Start        NOW                  End
 12:00:00   12:00:22             12:01:00
+```
+
+---
+
+### Current Minute (Past)
+
+Example, where now = "2025-09-09 12:00:22"
+
+- Current Minute (Past) would get you any dates matching these conditions: `>= 2025-09-09 12:00:00 AND < 2025-09-09 12:00:22` (anchored full 1-minute block)
+
+```sql
+Current Minute (Past):
+
+|==================================|
+^             ^
+Start      End (NOW)
+12:00:00   12:00:22
+```
+
+---
+
+### Current Minute (Future)
+
+Example, where now = "2025-09-09 12:00:22"
+
+- Current Minute (Future) would get you any dates matching these conditions: `>= 2025-09-09 12:00:22 AND < 2025-09-09 12:01:00` (anchored full 1-minute block)
+
+```sql
+Current Minute (Future):
+
+|==================================|
+              ^                    ^
+         Start (NOW)              End
+          12:00:22              12:01:00
 ```
 
 ---
@@ -98,6 +132,40 @@ Start        NOW                  End
 
 ---
 
+### Current Hour (Past)
+
+Example, where now = "2025-09-09 12:22:22"
+
+- Current Hour (Past) would get you any dates matching these conditions: `>= 2025-09-09 12:00:00 AND < 2025-09-09 12:22:22` (anchored full 1-hour block)
+
+```sql
+Current Hour (Past):
+
+|==================================|
+^             ^
+Start      End (NOW)
+12:00:00   12:22:22
+```
+
+---
+
+### Current Hour (Future)
+
+Example, where now = "2025-09-09 12:22:22"
+
+- Current Hour (Future) would get you any dates matching these conditions: `>= 2025-09-09 12:00:00 AND < 2025-09-09 13:00:00` (anchored full 1-hour block)
+
+```sql
+Current Hour (Future):
+
+|==================================|
+              ^                    ^
+         Start (NOW)              End
+           12:22:22            13:00:00
+```
+
+---
+
 ### Last X Hours
 
 Example, where now = "2025-09-09 12:22:22"
@@ -131,6 +199,42 @@ Next X Hours X=3 (excludes current hour):
 NOW       Start                End
 12:22:22  13:00:00          16:00:00
 ```
+
+---
+
+### Today (Past)
+
+Example, where now = "2025-09-09 12:22:22"
+
+- Today (Past) would get you any dates matching these conditions: `2025-09-09 00:00 AND < 2025-09-09 12:22:22`
+
+```sql
+Today (Past):
+
+|======================================================|
+^                            ^
+Start                     End (NOW)
+2025-09-08 00:00:00  2025-09-09 12:22:22
+```
+
+---
+
+### Today (Future)
+
+Example, where now = "2025-09-09 12:22:22"
+
+- Today (Future) would get you any dates matching these conditions: `2025-09-09 12:22:22 AND < 2025-09-10 00:00:00`
+
+```sql
+Today (Future):
+
+|======================================================|
+                            ^                          ^
+                       Start (NOW)                    End
+                   2025-09-09 12:22:22        2025-09-10 00:00:00
+```
+
+---
 
 ### Yesterday
 
@@ -277,11 +381,11 @@ Next X Days (Extension) X=3 (excludes today and NOW):
 
 ### Current Week
 
-Example, where today = "2025-09-09"
+Example, where today = "2025-09-09 12:22:22"
 
-- Current Week would get you any dates matching these conditions: `>= 2025-09-07 AND < 2025-09-14` (anchored full week)
+- Current Week would get you any dates matching these conditions: `>= 2025-09-07 00:00:00 AND < 2025-09-14 00:00:00` (anchored full week)
 
-```js
+```sql
 Current Week (full week, anchored):
 
     S       M       T       W      Th       F      Sa
@@ -290,6 +394,44 @@ Current Week (full week, anchored):
 |           Today (2025-09-09)                          |
 Start (Sunday)                                         End
 2025-09-07 00:00:00                            2025-09-14 00:00:00
+```
+
+---
+
+### Current Week (Past)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Week (Past) would get you any dates matching these conditions: `>= 2025-09-07 00:00:00 AND < 2025-09-09 12:22:22` (anchored full week)
+
+```sql
+Current Week (Past):
+
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+^                   ^
+|                  End (NOW) 2025-09-09 12:22:22
+Start (Sunday)
+2025-09-07 00:00:00
+```
+
+---
+
+### Current Week (Future)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Week (Future) would get you any dates matching these conditions: `>= 2025-09-09 12:22:22 AND < 2025-09-14 00:00:00` (anchored full week)
+
+```sql
+Current Week (Future):
+
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^                                   ^
+    Start (NOW) 2025-09-09 12:22:22                     |
+                                                       End
+                                               2025-09-14 00:00:00
 ```
 
 ---
@@ -579,6 +721,42 @@ End of X=1 and X=2: +∞
 
 ---
 
+### Current Month (Past)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Month (Past) would get you any dates matching these conditions: `>= 2025-09-01 00:00:00 AND < 2025-09-09 12:22:22`
+
+```sql
+Current Month (Past):
+
+|========================================================|
+^               ^
+|      End (NOW) 2025-09-09 12:22:22
+Start
+2025-09-01 00:00:00
+```
+
+---
+
+### Current Month (Future)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Month (Future) would get you any dates matching these conditions: `>= 2025-09-09 12:22:22 AND < 2025-10-01 00:00:00`
+
+```sql
+Current Month (Future):
+
+|========================================================|
+                ^                                        ^
+       Start (NOW) 2025-09-09 12:22:22                   |
+                                                        End
+                                               2025-10-01 00:00:00
+```
+
+---
+
 ### Last X Months
 
 Example, where today = "2025-09-09"
@@ -649,6 +827,44 @@ X=2 Months In the Future:
                                                          ^
                                                      End of X=2
                                                  2025-12-01 00:00:00
+```
+
+---
+
+### Current Quarter (Past)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Quarter (Past) would get you any dates matching these conditions: `>= 2025-07-01 00:00:00 AND < 2025-09-09 12:22:22`
+
+```sql
+Current Quarter (Past):
+
+ Jul          Aug           Sep
+|===========|===========|===========|
+^                              ^
+|                      End (NOW) 2025-09-09 12:22:22
+Start
+2025-07-01 00:00:00
+```
+
+---
+
+### Current Quarter (Future)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Quarter (Future) would get you any dates matching these conditions: `>= 2025-09-09 12:22:22 AND < 2025-10-01 00:00:00`
+
+```sql
+Current Quarter (Future):
+
+Jul          Aug           Sep
+|===========|===========|===========|
+                               ^    ^
+   Start (NOW) 2025-09-09 12:22:22  |
+                                   End
+                            2025-10-01 00:00:00
 ```
 
 ---
@@ -729,6 +945,40 @@ X=2 Quarters In the Future:
                                     ^
                                 End of X=2
                             2026-04-01 00:00:00
+```
+
+---
+
+### Current Year (Past)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Year (Past) would get you any dates matching these conditions: `>= 2025-01-01 00:00:00 AND < 2025-09-09 12:22:22`
+
+```sql
+Current Year (Past):
+
+|========================================================|
+^                                      ^
+Start                              End (NOW)
+2025-01-01 00:00:00            2025-09-09 12:22:22
+```
+
+---
+
+### Current Year (Future)
+
+Example, where today = "2025-09-09 12:22:22"
+
+- Current Year (Future) would get you any dates matching these conditions: `>= 2025-09-09 12:22:22 AND < 2026-01-01 00:00:00`
+
+```sql
+Current Year (Past):
+
+|========================================================|
+                                       ^                 ^
+                               Start (NOW)              End
+                       2025-09-09 12:22:22      2026-01-01 00:00:00
 ```
 
 ---
