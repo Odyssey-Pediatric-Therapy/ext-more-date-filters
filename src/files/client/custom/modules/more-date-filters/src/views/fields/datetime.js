@@ -1,7 +1,5 @@
 define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -12,14 +10,22 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
       "tomorrowExt",
 
       //Minutes
+      'currentMinuteExt',
+      'currentMinutePastExt',
+      'currentMinuteFutureExt',
       'lastXMinutesExt',
       'nextXMinutesExt',
 
       //Hours
+      'currentHourExt',
+      'currentHourPastExt',
+      'currentHourFutureExt',
       'lastXHoursExt',
       'nextXHoursExt',
 
       // Days
+      'todayPastExt',
+      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
@@ -31,17 +37,23 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",
       "nextXWeeksExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',
@@ -49,6 +61,8 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",
@@ -56,6 +70,8 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",
@@ -92,8 +108,10 @@ define('more-date-filters:views/fields/datetime', ['views/fields/datetime'], Dep
       "lastXMonthsExt",
       "nextXMonthsExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Quarters

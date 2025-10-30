@@ -1,7 +1,5 @@
 define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-date'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -23,17 +21,23 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
 
       // Weeks
       'currentWeekExt',
+      "currentWeekPastExt",
+      "currentWeekFutureExt",
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",
       "nextXWeeksExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',
@@ -41,6 +45,8 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",
@@ -48,6 +54,8 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",
@@ -76,8 +84,10 @@ define('more-date-filters:views/fields/foreign-date', ['views/fields/foreign-dat
       "lastXMonthsExt",
       "nextXMonthsExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Quarters

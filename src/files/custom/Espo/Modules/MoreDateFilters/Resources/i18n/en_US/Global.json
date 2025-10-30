@@ -1,32 +1,57 @@
 {
     "options": {
         "dateSearchRanges": {
-            "currentWeekExt": "Current Week",
-            "lastSevenDaysExt": "Last 7 Days (excl. Today)",
-            "lastWeekExt": "Last Week",
-            "lastXDaysExt": "Last X Days (excl. Today)",
-            "lastXMonthsExt": "Last X Months",
-            "lastXQuartersExt": "Last X Quarters",
-            "lastXWeeksExt": "Last X Weeks",
-            "lastXYearsExt": "Last X Years",
-            "nextQuarterExt": "Next Quarter",
-            "nextWeekExt": "Next Week",
-            "nextXDaysExt": "Next X Days (excl. Today)",
-            "nextXMonthsExt": "Next X Months",
-            "nextXQuartersExt": "Next X Quarters",
-            "nextXWeeksExt": "Next X Weeks",
-            "nextXYearsExt": "Next X Years",
-            "nextYearExt": "Next Year",
             "yesterdayExt": "Yesterday",
             "tomorrowExt": "Tomorrow",
-            "upToNextXWeeksExt": "Up to Next X Weeks",
-            "afterNextXWeeksExt": "After Next X Weeks",
-            "afterXWeeksAgoExt": "After X Weeks Ago",
-            "beforeXWeeksAgoExt": "Before X Weeks Ago",
+
+            "currentMinuteExt": "Current Minute",
+            "currentMinutePastExt": "Current Minute (Past)",
+            "currentMinuteFutureExt": "Current Minute (Future)",
             "lastXMinutesExt": "Last X Minutes",
             "nextXMinutesExt": "Next X Minutes",
+
+            "currentHourExt": "Current Hour",
+            "currentHourPastExt": "Current Hour (Past)",
+            "currentHourFutureExt": "Current Hour (Future)",
             "lastXHoursExt": "Last X Hours",
-            "nextXHoursExt": "Next X Hours"
+            "nextXHoursExt": "Next X Hours",
+
+            "todayPastExt": "Today (Past)",
+            "todayFutureExt": "Today (Future)",
+            "lastSevenDaysExt": "Last 7 Days (excl. Today)",
+            "lastXDaysExt": "Last X Days (excl. Today)",
+            "nextXDaysExt": "Next X Days (excl. Today)",
+
+            "currentWeekExt": "Current Week",
+            "currentWeekPastExt": "Current Week (Past)",
+            "currentWeekFutureExt": "Current Week (Future)",
+            "lastWeekExt": "Last Week",
+            "lastXWeeksExt": "Last X Weeks",
+            "nextWeekExt": "Next Week",
+            "nextXWeeksExt": "Next X Weeks",
+            "upToNextXWeeksExt": "Up to Next X Weeks",
+            "upToNextXWeeksFutureExt": "Up to Next X Weeks (Future)",
+            "afterNextXWeeksExt": "After Next X Weeks",
+            "afterXWeeksAgoExt": "After X Weeks Ago",
+            "afterXWeeksAgoPastExt": "After X Weeks Ago (Past)",
+            "beforeXWeeksAgoExt": "Before X Weeks Ago",
+
+            "currentMonthPastExt": "Current Month (Past)",
+            "currentMonthFutureExt": "Current Month (Future)",
+            "lastXMonthsExt": "Last X Months",
+            "nextXMonthsExt": "Next X Months",
+
+            "currentQuarterPastExt": "Current Quarter (Past)",
+            "currentQuarterFutureExt": "Current Quarter (Future)",
+            "lastXQuartersExt": "Last X Quarters",
+            "nextQuarterExt": "Next Quarter",
+            "nextXQuartersExt": "Next X Quarters",
+
+            "currentYearPastExt": "Current Year (Past)",
+            "currentYearFutureExt": "Current Year (Future)",
+            "lastXYearsExt": "Last X Years",
+            "nextYearExt": "Next Year",
+            "nextXYearsExt": "Next X Years"
         }
     }
 }

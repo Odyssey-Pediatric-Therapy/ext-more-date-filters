@@ -21,17 +21,23 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
 
       // Weeks
       'currentWeekExt',
+      "currentWeekPastExt",
+      "currentWeekFutureExt",
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",
       "nextXWeeksExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',
@@ -39,6 +45,8 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",
@@ -46,6 +54,8 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",
@@ -74,8 +84,10 @@ define('more-date-filters:views/fields/date', ['views/fields/date'], Dep => {
       "lastXMonthsExt",
       "nextXMonthsExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Quarters

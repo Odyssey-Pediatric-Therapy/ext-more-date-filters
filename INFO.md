@@ -20,7 +20,7 @@ A categorized table of all of the filters that are available in the extension
 | Minutes         |                    | [Current Minute](#current-minute)<br>[Current Minute (Past)](#current-minute-past)<br>[Current Minute (Future)](#current-minute-future)<br>[Last X Minutes](#last-x-minutes)<br>[Next X Minutes](#next-x-minutes) |
 | Hours           | —                  | [Current Hour](#current-hour)<br>[Current Hour (Past)](#current-hour-past)<br>[Current Hour (Future)](#current-hour-future)<br>[Last X Hours](#last-x-hours)<br>[Next X Hours](#next-x-hours) |
 | Days            | Today<br>Last Seven Days<br>Last X Days<br>Next X Days<br>Older Than X Days<br>After X Days | [Today (Past)](#today-past)<br>[Today (Future)](#today-future)<br>[Yesterday](#yesterday)<br>[Tomorrow](#tomorrow)<br>[Last Seven Days](#last-seven-days)<br>[Last X Days](#last-x-days)<br>[Next X Days](#next-x-days) |
-| Weeks           | —                  | [Current Week](#current-week)<br>[Current Week (Past)](#current-week-past)<br>[Current Week (Future)](#current-week-future)<br>[Last Week](#last-week)<br>[Last X Weeks](#last-x-weeks)<br>[Next Week](#next-week)<br>[Next X Weeks](#next-x-weeks)<br>[Up to Next X Weeks](#up-to-next-x-weeks)<br>[After Next X Weeks](#after-next-x-weeks)<br>[Before X Weeks Ago](#before-x-weeks-ago)<br>[After X Weeks Ago](#after-x-weeks-ago) |
+| Weeks           | —                  | [Current Week](#current-week)<br>[Current Week (Past)](#current-week-past)<br>[Current Week (Future)](#current-week-future)<br>[Last Week](#last-week)<br>[Last X Weeks](#last-x-weeks)<br>[Next Week](#next-week)<br>[Next X Weeks](#next-x-weeks)<br>[Up to Next X Weeks](#up-to-next-x-weeks)<br>[Up to Next X Weeks (Future)](#up-to-next-x-weeks-future)<br>[After Next X Weeks](#after-next-x-weeks)<br>[Before X Weeks Ago](#before-x-weeks-ago)<br>[After X Weeks Ago](#after-x-weeks-ago)<br>[After X Weeks Ago (Past)](#after-x-weeks-ago-past) |
 | Months          | Current Month<br>Last Month<br>Next Month | [Current Month (Past)](#current-month-past)<br>[Current Month (Future)](#current-month-future)<br>[Last X Months](#last-x-months)<br>[Next X Months](#next-x-months) |
 | Quarters        | Current Quarter<br>Last Quarter | [Current Quarter (Past)](#current-quarter-past)<br>[Current Quarter (Future)](#current-quarter-future)<br>[Last X Quarters](#last-x-quarters)<br>[Next Quarter](#next-quarter)<br>[Next X Quarters](#next-x-quarters) |
 | Years           | CurrentYear<br>Last Year | [Current Year (Past)](#current-year-past)<br>[Current Year (Future)](#current-year-future)<br>[Last X Years](#last-x-years)<br>[Next Year](#next-year)<br>[Next X Years](#next-x-years) |
@@ -564,11 +564,51 @@ X=2 Weeks In the Future:
 
 Example, where today = "2025-09-09"
 
-- Up To Next X Weeks (X=1) would get you any dates matching these conditions: `>= 2025-09-09 AND < 2025-09-21` (everything from now up until the end of the next full week)
-- Up To Next X Weeks (X=2) would get you any dates matching this condition: `>= 2025-09-09 AND < 2025-09-28` (everything from now up until the end of the next 2 full weeks)
+- Up To Next X Weeks (X=1) would get you any dates matching this condition: `< 2025-09-21` (everything up until the end of the next full week)
+- Up To Next X Weeks (X=2) would get you any dates matching this condition: `< 2025-09-28` (everything up until the end of the next 2 full weeks)
 
 ```sql
 Up To Next X Weeks X=2 (full 2-week period, anchored):
+
+Start of X=1 and X=2: -∞
+
+Current Week:
+
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+               (2025-09-09)
+
+
+
+X=1 Weeks In the Future:
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                    End of X=1
+                                                2025-09-21 00:00:00
+
+
+
+X=2 Weeks In the Future:
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                    End of X=2
+                                                2025-09-28 00:00:00
+```
+
+---
+
+### Up To Next X Weeks (Future)
+
+Example, where today = "2025-09-09"
+
+- Up To Next X Weeks (Future) (X=1) would get you any dates matching these conditions: `>= 2025-09-09 AND < 2025-09-21` (everything from now up until the end of the next full week)
+- Up To Next X Weeks (Future) (X=2) would get you any dates matching these condition: `>= 2025-09-09 AND < 2025-09-28` (everything from now up until the end of the next 2 full weeks)
+
+```sql
+Up To Next X Weeks (Future) X=2 (full 2-week period, anchored):
 
 Current Week:
 
@@ -717,6 +757,43 @@ Current Week:
 
 End of X=1 and X=2: +∞
 
+```
+
+---
+
+### After X Weeks Ago (Past)
+
+Example, where today = "2025-09-09"
+
+- After X Weeks Ago (X=1) would get you any dates matching these conditions: `>= 2025-09-07 AND < 2025-09-09` (everything after the end of the last full week up until now)
+- After X Weeks Ago (X=2) would get you any dates matching this condition: `>= 2025-08-31 AND < 2025-09-09` (everything after the end of the last 2 full weeks up until now)
+
+```sql
+After X Weeks Ago (Past) X=2 (full 2-week period, anchored):
+
+X=2 Weeks Ago:
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                   Start of X=2
+                                                2025-08-31 00:00:00
+
+
+X=1 Weeks Ago:
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                                                        ^
+                                                   Start of X=1
+                                                2025-09-07 00:00:00
+
+
+Current Week:
+
+    S       M       T       W      Th       F      Sa
+|=======|=======|=======|=======|=======|=======|=======|
+                    ^
+            End of X=1 and X=2
+               (2025-09-09)
 ```
 
 ---

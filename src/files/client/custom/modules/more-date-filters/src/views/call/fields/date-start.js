@@ -1,7 +1,5 @@
 define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields/date-start'], Dep => {
-
   return class extends Dep {
-
     searchTypeList = [
       // Common
       'ever',
@@ -12,36 +10,49 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
       "tomorrowExt",
 
       //Minutes
+      'currentMinuteExt',
+      'currentMinutePastExt',
+      'currentMinuteFutureExt',
       'lastXMinutesExt',
       'nextXMinutesExt',
 
       //Hours
+      'currentHourExt',
+      'currentHourPastExt',
+      'currentHourFutureExt',
       'lastXHoursExt',
       'nextXHoursExt',
 
       // Days
+      'todayPastExt',
+      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
       'lastXDaysExt',
-      'nextXDays',
       'nextXDaysExt',
       'olderThanXDays',
       'afterXDays',
 
       // Weeks
       'currentWeekExt',
+      'currentWeekPastExt',
+      'currentWeekFutureExt',
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",
       "nextXWeeksExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Months
       'currentMonth',
+      "currentMonthPastExt",
+      "currentMonthFutureExt",
       'lastMonth',
       "lastXMonthsExt",
       'nextMonth',
@@ -49,6 +60,8 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
 
       // Quarters
       'currentQuarter',
+      "currentQuarterPastExt",
+      "currentQuarterFutureExt",
       'lastQuarter',
       "lastXQuartersExt",
       "nextQuarterExt",
@@ -56,6 +69,8 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
 
       // Years
       'currentYear',
+      "currentYearPastExt",
+      "currentYearFutureExt",
       'lastYear',
       "lastXYearsExt",
       "nextYearExt",
@@ -92,8 +107,10 @@ define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields
       "lastXMonthsExt",
       "nextXMonthsExt",
       "upToNextXWeeksExt",
+      "upToNextXWeeksFutureExt",
       "afterNextXWeeksExt",
       "afterXWeeksAgoExt",
+      "afterXWeeksAgoPastExt",
       "beforeXWeeksAgoExt",
 
       // Quarters
