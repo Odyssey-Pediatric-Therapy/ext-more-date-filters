@@ -1,5 +1,5 @@
-define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields/date-start'], Dep => {
-  return class extends Dep {
+define('more-date-filters:views/call/fields/date-start', ['crm:views/call/fields/date-start', 'more-date-filters:views/fields/search-mixin'], (Dep, searchMixin) => {
+  return class extends searchMixin(Dep) {
     searchTypeList = [
       // Common
       'ever',

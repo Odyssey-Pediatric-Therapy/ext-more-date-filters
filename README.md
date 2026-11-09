@@ -191,23 +191,25 @@ Fetches the instance and runs composer install. To be used for unit tests and st
 
 ### Unit
 
-Run composer install for the site:
+Prepare the Espo instance and its Composer dependencies with `npm run prepare-test` if needed.
 
-```
-(cd site; composer install)
-```
-
-Command to run unit tests:
-
-```
-(npm run sync; cd site; vendor/bin/phpunit tests/unit/Espo/Modules/MoreDateFilters)
-```
-
-or
+Run the PHP regression suite:
 
 ```
 npm run unit-tests
 ```
+
+The test bootstrap loads extension classes directly from `src`, so a stale copy in `site`
+does not affect the results. Tests cover range boundaries, converter validation, metadata,
+and Espo's factory and datetime transformation pipeline without connecting a database.
+
+Run the frontend regression suite:
+
+```
+npm run frontend-tests
+```
+
+This exercises the extension views with the local Espo date and datetime view implementations.
 
 ### Integration
 
@@ -252,7 +254,7 @@ Note that integration tests needs the full Espo installation.
 Command to run:
 
 ```
-npm run sync; site/vendor/bin/phpstan
+npm run sa
 ```
 
 or

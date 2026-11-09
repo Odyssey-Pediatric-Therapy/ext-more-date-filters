@@ -1,0 +1,6 @@
+{
+    "fieldTypeViewMap": {
+        "date": "more-date-filters:views/fields/foreign-date",
+        "datetime": "more-date-filters:views/fields/foreign-datetime"
+    }
+}
