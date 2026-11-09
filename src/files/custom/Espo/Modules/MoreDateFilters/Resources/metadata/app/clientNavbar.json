@@ -1,0 +1,11 @@
+{
+    "menuItems": {
+        "moreDateFiltersGuide": {
+            "order": 5,
+            "groupIndex": 9,
+            "link": "#MoreDateFiltersGuide",
+            "labelTranslation": "Global.labels.moreDateFiltersGuide",
+            "iconClass": "fas fa-calendar-alt"
+        }
+    }
+}

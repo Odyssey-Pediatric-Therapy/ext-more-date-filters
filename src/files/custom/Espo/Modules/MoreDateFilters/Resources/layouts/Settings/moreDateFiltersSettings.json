@@ -1,0 +1,45 @@
+[
+    {
+        "label": "moreDateFiltersAvailability",
+        "rows": [
+            [
+                {
+                    "name": "moreDateFiltersCommon"
+                },
+                {
+                    "name": "moreDateFiltersOther"
+                }
+            ],
+            [
+                {
+                    "name": "moreDateFiltersMinutes"
+                },
+                {
+                    "name": "moreDateFiltersHours"
+                }
+            ],
+            [
+                {
+                    "name": "moreDateFiltersDays"
+                },
+                {
+                    "name": "moreDateFiltersWeeks"
+                }
+            ],
+            [
+                {
+                    "name": "moreDateFiltersMonths"
+                },
+                {
+                    "name": "moreDateFiltersQuarters"
+                }
+            ],
+            [
+                {
+                    "name": "moreDateFiltersYears"
+                },
+                false
+            ]
+        ]
+    }
+]

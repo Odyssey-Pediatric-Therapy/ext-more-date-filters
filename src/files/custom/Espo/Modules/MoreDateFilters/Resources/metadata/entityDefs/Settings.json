@@ -1,0 +1,221 @@
+{
+    "fields": {
+        "moreDateFiltersCommon": {
+            "type": "checklist",
+            "options": [
+                "past",
+                "future",
+                "today",
+                "yesterdayExt",
+                "tomorrowExt"
+            ],
+            "default": [
+                "past",
+                "future",
+                "today",
+                "yesterdayExt",
+                "tomorrowExt"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersMinutes": {
+            "type": "checklist",
+            "options": [
+                "currentMinuteExt",
+                "currentMinutePastExt",
+                "currentMinuteFutureExt",
+                "lastXMinutesExt",
+                "nextXMinutesExt"
+            ],
+            "default": [
+                "currentMinuteExt",
+                "currentMinutePastExt",
+                "currentMinuteFutureExt",
+                "lastXMinutesExt",
+                "nextXMinutesExt"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersHours": {
+            "type": "checklist",
+            "options": [
+                "currentHourExt",
+                "currentHourPastExt",
+                "currentHourFutureExt",
+                "lastXHoursExt",
+                "nextXHoursExt"
+            ],
+            "default": [
+                "currentHourExt",
+                "currentHourPastExt",
+                "currentHourFutureExt",
+                "lastXHoursExt",
+                "nextXHoursExt"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersDays": {
+            "type": "checklist",
+            "options": [
+                "todayPastExt",
+                "todayFutureExt",
+                "lastSevenDays",
+                "lastSevenDaysExt",
+                "lastXDays",
+                "lastXDaysExt",
+                "nextXDays",
+                "nextXDaysExt",
+                "olderThanXDays",
+                "afterXDays"
+            ],
+            "default": [
+                "todayPastExt",
+                "todayFutureExt",
+                "lastSevenDays",
+                "lastSevenDaysExt",
+                "lastXDays",
+                "lastXDaysExt",
+                "nextXDays",
+                "nextXDaysExt",
+                "olderThanXDays",
+                "afterXDays"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersWeeks": {
+            "type": "checklist",
+            "options": [
+                "currentWeekExt",
+                "currentWeekPastExt",
+                "currentWeekFutureExt",
+                "lastWeekExt",
+                "lastXWeeksExt",
+                "nextWeekExt",
+                "nextXWeeksExt",
+                "upToNextXWeeksExt",
+                "upToNextXWeeksFutureExt",
+                "afterNextXWeeksExt",
+                "afterXWeeksAgoExt",
+                "afterXWeeksAgoPastExt",
+                "beforeXWeeksAgoExt"
+            ],
+            "default": [
+                "currentWeekExt",
+                "currentWeekPastExt",
+                "currentWeekFutureExt",
+                "lastWeekExt",
+                "lastXWeeksExt",
+                "nextWeekExt",
+                "nextXWeeksExt",
+                "upToNextXWeeksExt",
+                "upToNextXWeeksFutureExt",
+                "afterNextXWeeksExt",
+                "afterXWeeksAgoExt",
+                "afterXWeeksAgoPastExt",
+                "beforeXWeeksAgoExt"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersMonths": {
+            "type": "checklist",
+            "options": [
+                "currentMonth",
+                "currentMonthPastExt",
+                "currentMonthFutureExt",
+                "lastMonth",
+                "lastXMonthsExt",
+                "nextMonth",
+                "nextXMonthsExt"
+            ],
+            "default": [
+                "currentMonth",
+                "currentMonthPastExt",
+                "currentMonthFutureExt",
+                "lastMonth",
+                "lastXMonthsExt",
+                "nextMonth",
+                "nextXMonthsExt"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersQuarters": {
+            "type": "checklist",
+            "options": [
+                "currentQuarter",
+                "currentQuarterPastExt",
+                "currentQuarterFutureExt",
+                "lastQuarter",
+                "lastXQuartersExt",
+                "nextQuarterExt",
+                "nextXQuartersExt",
+                "currentFiscalQuarter",
+                "lastFiscalQuarter"
+            ],
+            "default": [
+                "currentQuarter",
+                "currentQuarterPastExt",
+                "currentQuarterFutureExt",
+                "lastQuarter",
+                "lastXQuartersExt",
+                "nextQuarterExt",
+                "nextXQuartersExt",
+                "currentFiscalQuarter",
+                "lastFiscalQuarter"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersYears": {
+            "type": "checklist",
+            "options": [
+                "currentYear",
+                "currentYearPastExt",
+                "currentYearFutureExt",
+                "lastYear",
+                "lastXYearsExt",
+                "nextYearExt",
+                "nextXYearsExt",
+                "currentFiscalYear",
+                "lastFiscalYear"
+            ],
+            "default": [
+                "currentYear",
+                "currentYearPastExt",
+                "currentYearFutureExt",
+                "lastYear",
+                "lastXYearsExt",
+                "nextYearExt",
+                "nextXYearsExt",
+                "currentFiscalYear",
+                "lastFiscalYear"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        },
+        "moreDateFiltersOther": {
+            "type": "checklist",
+            "options": [
+                "isEmpty",
+                "on",
+                "after",
+                "before",
+                "between"
+            ],
+            "default": [
+                "isEmpty",
+                "on",
+                "after",
+                "before",
+                "between"
+            ],
+            "translation": "Global.options.dateSearchRanges",
+            "tooltip": true
+        }
+    }
+}

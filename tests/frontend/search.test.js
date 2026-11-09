@@ -3,14 +3,24 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import test from 'node:test';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+
+class TestInputElement {}
 
 const source = 'src/files/client/custom/modules/more-date-filters/src/views';
-const context = vm.createContext({BaseFieldView: class {data() {return {};}}});
+const context = vm.createContext({HTMLInputElement: TestInputElement, JQuery: () => ({}), BaseFieldView: class {data() {return {};} getSearchTypeList() {return this.searchTypeList;}}});
 function loadNative(name, dependencies = {}) {
     Object.assign(context, dependencies);
-    let code = fs.readFileSync(`site/client/src/views/fields/${name}.js`, 'utf8');
-    code = code.replace(/^import .*;\r?\n/gm, '').replace(/export default (\w+);/, 'globalThis.Native = $1;');
-    vm.runInContext(code, context);
+    const js = `site/client/src/views/fields/${name}.js`;
+    const file = fs.existsSync(js) ? js : `site/client/src/views/fields/${name}.ts`;
+    let code = fs.readFileSync(file, 'utf8');
+    if (file.endsWith('.ts')) {
+        const ts = require('typescript');
+        code = ts.transpileModule(code, {compilerOptions: {target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext}}).outputText;
+    }
+    code = code.replace(/^import[\s\S]*?from ['"][^'"]+['"];?\r?\n/gm, '').replace(/export default (\w+);/, 'globalThis.Native = $1;');
+    vm.runInContext(`(function () {${code}\n})();`, context);
     return context.Native;
 }
 const DateView = loadNative('date');
@@ -20,9 +30,10 @@ context.define = (name, dependencies, factory) => {
     modules[name] = factory(...dependencies.map(name => modules[name] ??
         (name === 'views/fields/date' || name === 'views/fields/foreign-date' || name.includes('working-time-range') ? DateView : DatetimeView)));
 };
+vm.runInContext(fs.readFileSync(`${source}/../helpers/filter-settings.js`, 'utf8'), context);
 vm.runInContext(fs.readFileSync(`${source}/fields/search-mixin.js`, 'utf8'), context);
 
-const views = fs.readdirSync(source, {recursive: true}).filter(file => file.endsWith('.js') && file !== 'fields/search-mixin.js');
+const views = fs.readdirSync(source, {recursive: true}).filter(file => file.endsWith('.js') && file !== 'fields/search-mixin.js' && file.includes('fields/'));
 for (const file of views) {
     test(`${file}: numeric filters display, submit, and restore their count`, () => {
         const code = fs.readFileSync(path.join(source, file), 'utf8');
@@ -39,6 +50,10 @@ for (const file of views) {
         view.$el = {find: selector => ({
             addClass: () => visible.delete(selector), removeClass: () => visible.add(selector),
             attr: value => {attrs = value;}, removeAttr: () => {attrs = undefined;}, val: () => number,
+        })};
+        view.element = {querySelector: selector => Object.assign(new TestInputElement(), {
+            classList: {add: () => visible.delete(selector), remove: () => visible.add(selector)},
+            value: number,
         })};
         view.$element = {val: () => ''};
         view.parseDate = () => null;
@@ -71,5 +86,19 @@ for (const file of views) {
         assert(!visible.has('div.additional-number'));
         assert.equal(attrs, undefined);
         if (file.includes('working-time-range')) assert(!view.searchTypeList.includes('currentMinuteExt'));
+        const fields = JSON.parse(fs.readFileSync('src/files/custom/Espo/Modules/MoreDateFilters/Resources/metadata/entityDefs/Settings.json', 'utf8')).fields;
+        const values = {moreDateFiltersWeeks: []};
+        view.getConfig = () => ({get: name => values[name]});
+        view.getMetadata = () => ({get: path => path.reduce((node, key) => node?.[key], {entityDefs: {Settings: {fields}}})});
+        view.getSearchType = () => null;
+        assert(!view.getSearchTypeList().includes('currentWeekExt'), `${file} must apply availability settings`);
+        values.moreDateFiltersWeeks = ['currentWeekExt'];
+        assert(view.getSearchTypeList().includes('currentWeekExt'));
+        assert(!view.getSearchTypeList().includes('lastXWeeksExt'));
+        view.getSearchType = () => 'lastXWeeksExt';
+        assert(view.getSearchTypeList().includes('lastXWeeksExt'), `${file} must preserve the applied filter`);
+        view.getSearchType = () => null;
+        for (const name of Object.keys(fields)) values[name] = [];
+        assert.deepEqual(Array.from(view.getSearchTypeList()), ['ever']);
     });
 }

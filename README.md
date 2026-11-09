@@ -28,6 +28,21 @@ parts of a period, and week-based cutoffs. Requires EspoCRM 9.1+ and PHP 8.2+.
 For complete examples, timezone/DST rules, and the distinction between filtering a single
 field and showing overlapping calendar events, use the [filter guide](INFO.md).
 
+## Choosing available filters
+
+Administrators can open **Administration → Extension Settings → More Date Filters**
+and check which filters users can choose. All signed-in users can open **Date filter guide**
+from the main menu (⋮), or go directly to `#MoreDateFiltersGuide`. Administrators can also
+add **Date filter guide** to the navigation tabs in **Administration → User Interface**.
+The guide groups every filter
+in tables showing its enabled status and a brief summary, followed by range rules and examples. All filters start enabled. Save to apply changes;
+other signed-in sessions need to reload. No rebuild is required when changing these choices.
+
+The choices apply across compatible date fields, including built-in filters. Date-only fields
+still exclude time-of-day options. **Ever** always remains available to clear a filter.
+Already applied or saved filters continue to work when disabled; their selected option stays
+visible while editing that filter. These settings control the menu, not access to records.
+
 ## Development
 
 The remaining sections cover the local development instance, builds, and tests.

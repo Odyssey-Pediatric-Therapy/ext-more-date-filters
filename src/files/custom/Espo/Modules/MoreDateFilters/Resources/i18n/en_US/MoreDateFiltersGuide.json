@@ -1,0 +1,144 @@
+{
+    "labels": {
+        "filter": "Filter",
+        "status": "Status",
+        "summary": "What it does",
+        "overview": "Available filters",
+        "rules": "How to read the ranges",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "example": "Example"
+    },
+    "messages": {
+        "intro": "Browse every date filter below. Enabled filters appear in compatible search fields; disabled filters are hidden from new selections.",
+        "availability": "Some choices apply only to timed fields. Existing applied or saved filters keep working even if disabled. Other signed-in sessions need to reload after an administrator changes availability."
+    },
+    "filterSummaries": {
+        "ever": "No date restriction. Always available so you can clear a filter.",
+        "past": "Dates before today; for timed values, up to and including now (Espo’s built-in rule).",
+        "future": "Dates after today; for timed values, after now (Espo’s built-in rule).",
+        "today": "The whole of today.",
+        "yesterdayExt": "The whole of yesterday.",
+        "tomorrowExt": "The whole of tomorrow.",
+        "todayPastExt": "From midnight today up to now, excluding now. Timed values only.",
+        "todayFutureExt": "From now up to midnight tomorrow, including now. Timed values only.",
+        "lastSevenDays": "From midnight 7 days ago through today; for timed values, ends at now.",
+        "lastSevenDaysExt": "The previous 7 whole days, ending before today starts.",
+        "lastXDays": "From midnight X days ago through today; for timed values, ends at now.",
+        "lastXDaysExt": "The previous X whole days, ending before today starts.",
+        "nextXDays": "From today through the end of the day X days ahead; for timed values, starts at now.",
+        "nextXDaysExt": "X whole days starting tomorrow. Excludes today.",
+        "olderThanXDays": "Before midnight X days ago, with no lower limit.",
+        "afterXDays": "From midnight X days ahead onward, including that midnight.",
+        "upToNextXWeeksExt": "All history up to the end of the next X complete weeks. X=0 ends at the end of this week; the cutoff is excluded.",
+        "upToNextXWeeksFutureExt": "From now to the end of the next X complete weeks. X=0 ends at the end of this week; the cutoff is excluded.",
+        "afterNextXWeeksExt": "From the end of the next X complete weeks onward, including the cutoff. X=0 starts at the end of this week.",
+        "afterXWeeksAgoExt": "From the end of the week X weeks ago onward, including future values. X=1 starts at this week’s start; X=0 at this week’s end.",
+        "afterXWeeksAgoPastExt": "From the end of the week X weeks ago up to now, excluding now. X=1 starts at this week’s start. X must be at least 1.",
+        "beforeXWeeksAgoExt": "Before the start of the week X weeks ago, with no lower limit. X=0 uses this week’s start. The cutoff is excluded.",
+        "isEmpty": "Records whose selected date field has no value.",
+        "on": "The calendar date you enter, including all times on that date.",
+        "after": "After the date you enter; excludes that calendar date.",
+        "before": "Before the date you enter; excludes that calendar date.",
+        "between": "Between the two dates you enter, including both calendar dates.",
+        "currentMinuteExt": "The whole current minute, including its past and future parts.",
+        "currentMinutePastExt": "From the start of this minute up to now, excluding now. Timed values only.",
+        "currentMinuteFutureExt": "From now to the end of this minute, including now. Timed values only.",
+        "lastXMinutesExt": "The previous X complete minutes. Excludes the current minute.",
+        "nextXMinutesExt": "The next X complete minutes, starting at the next minute boundary.",
+        "currentHourExt": "The whole current hour, including its past and future parts.",
+        "currentHourPastExt": "From the start of this hour up to now, excluding now. Timed values only.",
+        "currentHourFutureExt": "From now to the end of this hour, including now. Timed values only.",
+        "lastXHoursExt": "The previous X complete hours. Excludes the current hour.",
+        "nextXHoursExt": "The next X complete hours, starting at the next hour boundary.",
+        "currentWeekExt": "The whole current week, including its past and future parts.",
+        "currentWeekPastExt": "From the start of this week up to now, excluding now. On date-only fields, today is excluded.",
+        "currentWeekFutureExt": "From now to the end of this week, including now. On date-only fields, today is included.",
+        "lastXWeeksExt": "The previous X complete weeks. Excludes the current week.",
+        "nextXWeeksExt": "The next X complete weeks, starting at the next week boundary.",
+        "currentMonth": "The whole current month, including its past and future parts.",
+        "currentMonthPastExt": "From the start of this month up to now, excluding now. On date-only fields, today is excluded.",
+        "currentMonthFutureExt": "From now to the end of this month, including now. On date-only fields, today is included.",
+        "lastXMonthsExt": "The previous X complete months. Excludes the current month.",
+        "nextXMonthsExt": "The next X complete months, starting at the next month boundary.",
+        "currentQuarter": "The whole current quarter, including its past and future parts.",
+        "currentQuarterPastExt": "From the start of this quarter up to now, excluding now. On date-only fields, today is excluded.",
+        "currentQuarterFutureExt": "From now to the end of this quarter, including now. On date-only fields, today is included.",
+        "lastXQuartersExt": "The previous X complete quarters. Excludes the current quarter.",
+        "nextXQuartersExt": "The next X complete quarters, starting at the next quarter boundary.",
+        "currentYear": "The whole current year, including its past and future parts.",
+        "currentYearPastExt": "From the start of this year up to now, excluding now. On date-only fields, today is excluded.",
+        "currentYearFutureExt": "From now to the end of this year, including now. On date-only fields, today is included.",
+        "lastXYearsExt": "The previous X complete years. Excludes the current year.",
+        "nextXYearsExt": "The next X complete years, starting at the next year boundary.",
+        "lastWeekExt": "The whole previous calendar week.",
+        "nextWeekExt": "The whole next calendar week.",
+        "lastMonth": "The whole previous calendar month.",
+        "nextMonth": "The whole next calendar month.",
+        "lastQuarter": "The whole previous calendar quarter.",
+        "nextQuarterExt": "The whole next calendar quarter.",
+        "lastYear": "The whole previous calendar year.",
+        "nextYearExt": "The whole next calendar year.",
+        "currentFiscalQuarter": "The whole current fiscal quarter, using the application’s fiscal-year settings.",
+        "lastFiscalQuarter": "The whole previous fiscal quarter, using the application’s fiscal-year settings.",
+        "currentFiscalYear": "The whole current fiscal year, using the application’s fiscal-year settings.",
+        "lastFiscalYear": "The whole previous fiscal year, using the application’s fiscal-year settings."
+    },
+    "ruleSections": {
+        "periods": {
+            "title": "Complete periods",
+            "items": [
+                "`Last X` / `Next X` selects X whole periods and excludes the current one.",
+                "Last periods end at the start of the current period. Next periods start at the next period boundary."
+            ],
+            "example": "At 12:22, `Last X Hours` with X=3 selects 09:00–12:00. `Next X Hours` selects 13:00–16:00."
+        },
+        "boundaries": {
+            "title": "Start and end boundaries",
+            "items": [
+                "Extension ranges include their start and exclude their end.",
+                "Relative ranges recalculate each time you search, including saved searches."
+            ],
+            "example": "A range from midnight September 8 up to midnight September 9 includes September 8, but not September 9."
+        },
+        "count": {
+            "title": "Choosing X",
+            "items": [
+                "X is a whole number. Extension filters accept 1–10,000.",
+                "The five week cutoffs whose summaries above describe X=0 also accept zero.",
+                "Built-in Espo filters retain their own validation."
+            ]
+        },
+        "calendar": {
+            "title": "Weeks, quarters, and fiscal periods",
+            "items": [
+                "Weeks follow the application’s configured week start.",
+                "Calendar quarters are January–March, April–June, July–September, and October–December.",
+                "Fiscal filters use the application’s fiscal-year settings."
+            ]
+        },
+        "dates": {
+            "title": "Date-only and all-day values",
+            "items": [
+                "Date-only fields have no time of day. Their current-period `(Past)` filters exclude today; `(Future)` filters include today.",
+                "Minute/hour filters exclude all-day Tasks and Meetings."
+            ]
+        },
+        "zone": {
+            "title": "Timezones and clock changes",
+            "items": [
+                "Datetime ranges use the search timezone, falling back to the application timezone.",
+                "Calendar days follow daylight-saving changes and include leap days.",
+                "Minute/hour offsets use elapsed time."
+            ]
+        },
+        "field": {
+            "title": "Which field is compared?",
+            "items": [
+                "Each filter compares the selected field, including related date fields.",
+                "Empty dates do not match a date range. Use `Is Empty` to find them."
+            ],
+            "example": "`Date Start` = `Today` does not match a meeting that started yesterday and continues today. `Date End` is a separate field."
+        }
+    }
+}

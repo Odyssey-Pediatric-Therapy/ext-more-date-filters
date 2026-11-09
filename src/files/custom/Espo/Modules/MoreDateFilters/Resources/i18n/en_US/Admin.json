@@ -1,0 +1,9 @@
+{
+    "labels": {
+        "Extension Settings": "Extension Settings",
+        "More Date Filters": "More Date Filters"
+    },
+    "descriptions": {
+        "moreDateFiltersSettings": "Choose which date filters are available in search dropdowns"
+    }
+}
