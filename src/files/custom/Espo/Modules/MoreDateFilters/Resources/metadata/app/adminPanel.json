@@ -1,0 +1,16 @@
+{
+    "extensionSettings": {
+        "label": "Extension Settings",
+        "order": 101,
+        "itemList": [
+            "__APPEND__",
+            {
+                "url": "#Admin/moreDateFiltersSettings",
+                "label": "More Date Filters",
+                "iconClass": "fas fa-calendar-alt",
+                "description": "moreDateFiltersSettings",
+                "recordView": "more-date-filters:views/admin/settings"
+            }
+        ]
+    }
+}

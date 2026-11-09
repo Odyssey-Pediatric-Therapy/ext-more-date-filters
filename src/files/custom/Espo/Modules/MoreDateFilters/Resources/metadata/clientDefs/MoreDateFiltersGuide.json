@@ -1,0 +1,4 @@
+{
+    "controller": "more-date-filters:controllers/guide",
+    "iconClass": "fas fa-calendar-alt"
+}

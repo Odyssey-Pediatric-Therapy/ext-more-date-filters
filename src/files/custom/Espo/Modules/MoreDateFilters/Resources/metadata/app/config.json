@@ -1,0 +1,31 @@
+{
+    "params": {
+        "moreDateFiltersCommon": {
+            "level": "default"
+        },
+        "moreDateFiltersMinutes": {
+            "level": "default"
+        },
+        "moreDateFiltersHours": {
+            "level": "default"
+        },
+        "moreDateFiltersDays": {
+            "level": "default"
+        },
+        "moreDateFiltersWeeks": {
+            "level": "default"
+        },
+        "moreDateFiltersMonths": {
+            "level": "default"
+        },
+        "moreDateFiltersQuarters": {
+            "level": "default"
+        },
+        "moreDateFiltersYears": {
+            "level": "default"
+        },
+        "moreDateFiltersOther": {
+            "level": "default"
+        }
+    }
+}

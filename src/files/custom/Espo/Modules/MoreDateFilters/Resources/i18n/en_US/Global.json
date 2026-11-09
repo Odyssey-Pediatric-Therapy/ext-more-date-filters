@@ -3,25 +3,21 @@
         "dateSearchRanges": {
             "yesterdayExt": "Yesterday",
             "tomorrowExt": "Tomorrow",
-
             "currentMinuteExt": "Current Minute",
             "currentMinutePastExt": "Current Minute (Past)",
             "currentMinuteFutureExt": "Current Minute (Future)",
             "lastXMinutesExt": "Last X Minutes",
             "nextXMinutesExt": "Next X Minutes",
-
             "currentHourExt": "Current Hour",
             "currentHourPastExt": "Current Hour (Past)",
             "currentHourFutureExt": "Current Hour (Future)",
             "lastXHoursExt": "Last X Hours",
             "nextXHoursExt": "Next X Hours",
-
             "todayPastExt": "Today (Past)",
             "todayFutureExt": "Today (Future)",
             "lastSevenDaysExt": "Last 7 Days (excl. Today)",
             "lastXDaysExt": "Last X Days (excl. Today)",
             "nextXDaysExt": "Next X Days (excl. Today)",
-
             "currentWeekExt": "Current Week",
             "currentWeekPastExt": "Current Week (Past)",
             "currentWeekFutureExt": "Current Week (Future)",
@@ -35,23 +31,29 @@
             "afterXWeeksAgoExt": "After X Weeks Ago",
             "afterXWeeksAgoPastExt": "After X Weeks Ago (Past)",
             "beforeXWeeksAgoExt": "Before X Weeks Ago",
-
             "currentMonthPastExt": "Current Month (Past)",
             "currentMonthFutureExt": "Current Month (Future)",
             "lastXMonthsExt": "Last X Months",
             "nextXMonthsExt": "Next X Months",
-
             "currentQuarterPastExt": "Current Quarter (Past)",
             "currentQuarterFutureExt": "Current Quarter (Future)",
             "lastXQuartersExt": "Last X Quarters",
             "nextQuarterExt": "Next Quarter",
             "nextXQuartersExt": "Next X Quarters",
-
             "currentYearPastExt": "Current Year (Past)",
             "currentYearFutureExt": "Current Year (Future)",
             "lastXYearsExt": "Last X Years",
             "nextYearExt": "Next Year",
             "nextXYearsExt": "Next X Years"
         }
+    },
+    "labels": {
+        "moreDateFiltersGuide": "Date filter guide"
+    },
+    "scopeNames": {
+        "MoreDateFiltersGuide": "Date filter guide"
+    },
+    "scopeNamesPlural": {
+        "MoreDateFiltersGuide": "Date filter guide"
     }
 }

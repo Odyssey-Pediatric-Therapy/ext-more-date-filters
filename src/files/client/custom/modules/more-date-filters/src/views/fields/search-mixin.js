@@ -1,4 +1,9 @@
-define('more-date-filters:views/fields/search-mixin', [], () => Dep => class extends Dep {
+define('more-date-filters:views/fields/search-mixin', ['more-date-filters:helpers/filter-settings'], filterSettings => Dep => class extends Dep {
+    getSearchTypeList() {
+        const list = super.getSearchTypeList();
+        return filterSettings.filterList(list, this.getConfig(), this.getMetadata(), this.getSearchType());
+    }
+
     isExtendedNumberSearch(type) {
         return this.searchWithAdditionalNumberTypeList.includes(type) && type.endsWith('Ext');
     }

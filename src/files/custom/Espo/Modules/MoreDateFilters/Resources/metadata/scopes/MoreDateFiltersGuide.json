@@ -1,0 +1,8 @@
+{
+    "entity": false,
+    "layouts": false,
+    "tab": true,
+    "acl": "boolean",
+    "customizable": false,
+    "module": "MoreDateFilters"
+}
