@@ -1,6 +1,6 @@
 {
   "name": "espocrm-ext-more-date-filters",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "",
   "scripts": {
     "sa": "php site/vendor/bin/phpstan analyse --debug --no-progress",
