@@ -1,19 +1,37 @@
-# Template repository for EspoCRM extensions
+# More Date Filters for EspoCRM
 
-Create a repository for your extension from this template.
+Adds date and datetime search filters for complete calendar periods, elapsed or remaining
+parts of a period, and week-based cutoffs. Requires EspoCRM 9.1+ and PHP 8.2+.
 
-## Preparing repository
+**[Read the filter guide: behavior, examples, and X values](INFO.md).**
 
-Run:
+## How the filters work
 
-```
-php init.php
-```
+- **Extension Last/Next X periods** select complete periods and exclude the current one. At 12:22,
+  Last X Hours with X=3 selects 09:00 up to 12:00; Next X Hours with X=3 selects 13:00 up to 16:00.
+- **Current period (Past)** runs from the period's start up to now. **Current period (Future)**
+  runs from now to the next period boundary. An exact match at now belongs to the Future part.
+- Added ranges **include their start and exclude their end**: `start <= value < end`.
+  An upper boundary of September 10 at midnight does not include September 10.
+- The **“excl. Today”** day filters exclude today entirely. Espo's built-in day filters remain
+  available and can include today; the guide explains their different boundaries.
+- **Weeks follow the application's configured week start** (Sunday by default). “After X Weeks Ago”
+  starts after the end of the referenced calendar week, rather than exactly X times seven days ago.
+- **X is a whole number.** Most extension filters accept 1–10,000. Five week cutoff filters also
+  accept zero; see [X and zero values](INFO.md#x-and-zero-values) for their exact meaning.
+- **Date-only fields have no time of day.** For their current-week/month/quarter/year filters,
+  Past excludes today and Future includes today. Minute/hour filters apply to timed values;
+  all-day Tasks and Meetings are excluded from those sub-day filters.
+- Relative filters are recalculated whenever a search runs. Saving “Last Week” does not freeze
+  the dates shown when the filter was saved.
 
-It will ask to enter an extension name and some other information.
+For complete examples, timezone/DST rules, and the distinction between filtering a single
+field and showing overlapping calendar events, use the [filter guide](INFO.md).
 
-After that, you can remove `init.php` file from your repository. Commit changes and proceed to configuration & building.
+## Development
 
+The remaining sections cover the local development instance, builds, and tests.
+For manual test data, use [the seeding guide](tests/README-seeding.md) (`npm run seed` / `npm run empty`).
 
 ## Configuration
 
@@ -191,23 +209,25 @@ Fetches the instance and runs composer install. To be used for unit tests and st
 
 ### Unit
 
-Run composer install for the site:
+Prepare the Espo instance and its Composer dependencies with `npm run prepare-test` if needed.
 
-```
-(cd site; composer install)
-```
-
-Command to run unit tests:
-
-```
-(npm run sync; cd site; vendor/bin/phpunit tests/unit/Espo/Modules/MoreDateFilters)
-```
-
-or
+Run the PHP regression suite:
 
 ```
 npm run unit-tests
 ```
+
+The test bootstrap loads extension classes directly from `src`, so a stale copy in `site`
+does not affect the results. Tests cover range boundaries, converter validation, metadata,
+and Espo's factory and datetime transformation pipeline without connecting a database.
+
+Run the frontend regression suite:
+
+```
+npm run frontend-tests
+```
+
+This exercises the extension views with the local Espo date and datetime view implementations.
 
 ### Integration
 
@@ -250,12 +270,6 @@ Note that integration tests needs the full Espo installation.
 ### Static analysis
 
 Command to run:
-
-```
-npm run sync; site/vendor/bin/phpstan
-```
-
-or
 
 ```
 npm run sa

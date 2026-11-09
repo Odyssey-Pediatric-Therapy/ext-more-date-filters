@@ -2,3 +2,23 @@
 /site/
 /tests/integration/config.php
 /node_modules
+/config.json
+/config.php
+/extensions/
+/src/files/custom/Espo/Modules/*/vendor/
+/vendor
+/.phpunit.result.cache
+/composer.phar
+
+# Generated from npm dependencies by install and build.
+/src/files/client/custom/modules/calendar-plus/lib/*.min.js
+/src/files/client/custom/modules/calendar-plus/lib/*.LICENSE
+
+# Repo-local integration and browser test runtime and artifacts.
+/tests/.runtime/
+/test-results/
+/playwright-report/
+
+# Manual demo fixture dependencies.
+/tests/vendor/
+/tests/.fixtures/

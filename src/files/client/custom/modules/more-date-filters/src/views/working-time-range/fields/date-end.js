@@ -1,5 +1,5 @@
-define('more-date-filters:views/working-time-range/fields/date-end', ['views/working-time-range/fields/date-end'], Dep => {
-  return class extends Dep {
+define('more-date-filters:views/working-time-range/fields/date-end', ['views/working-time-range/fields/date-end', 'more-date-filters:views/fields/search-mixin'], (Dep, searchMixin) => {
+  return class extends searchMixin(Dep) {
     searchTypeList = [
       // Common
       'ever',
@@ -9,23 +9,7 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
       "yesterdayExt",
       "tomorrowExt",
 
-      //Minutes
-      'currentMinuteExt',
-      'currentMinutePastExt',
-      'currentMinuteFutureExt',
-      'lastXMinutesExt',
-      'nextXMinutesExt',
-
-      //Hours
-      'currentHourExt',
-      'currentHourPastExt',
-      'currentHourFutureExt',
-      'lastXHoursExt',
-      'nextXHoursExt',
-
       // Days
-      'todayPastExt',
-      'todayFutureExt',
       'lastSevenDays',
       'lastSevenDaysExt',
       'lastXDays',
@@ -37,8 +21,8 @@ define('more-date-filters:views/working-time-range/fields/date-end', ['views/wor
 
       // Weeks
       'currentWeekExt',
-      'currentWeekPastExt',
-      'currentWeekFutureExt',
+      "currentWeekPastExt",
+      "currentWeekFutureExt",
       "lastWeekExt",
       "lastXWeeksExt",
       "nextWeekExt",
