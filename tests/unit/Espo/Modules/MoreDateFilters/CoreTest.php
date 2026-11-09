@@ -13,8 +13,7 @@ class CoreTest extends TestCase
 {
   private Core $core;
 
-  public function __construct() {
-    parent::__construct();
+  protected function setUp(): void {
 
     $this->core = new Core();
   }
