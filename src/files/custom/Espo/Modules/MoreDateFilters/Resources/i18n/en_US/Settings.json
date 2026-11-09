@@ -1,0 +1,27 @@
+{
+    "fields": {
+        "moreDateFiltersCommon": "Common filters",
+        "moreDateFiltersMinutes": "Minute filters",
+        "moreDateFiltersHours": "Hour filters",
+        "moreDateFiltersDays": "Day filters",
+        "moreDateFiltersWeeks": "Week filters",
+        "moreDateFiltersMonths": "Month filters",
+        "moreDateFiltersQuarters": "Quarter filters",
+        "moreDateFiltersYears": "Year filters",
+        "moreDateFiltersOther": "Other filters"
+    },
+    "labels": {
+        "moreDateFiltersAvailability": "Available date filters"
+    },
+    "tooltips": {
+        "moreDateFiltersCommon": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersMinutes": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersHours": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersDays": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersWeeks": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersMonths": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersQuarters": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersYears": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes.",
+        "moreDateFiltersOther": "Checked filters appear in compatible date-field search dropdowns. Ever always remains available. Existing applied filters continue to work. Save and reload other signed-in sessions to receive changes."
+    }
+}

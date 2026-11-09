@@ -1,0 +1,12 @@
+{
+    "mandatory": {
+        "scopeLevel": {
+            "MoreDateFiltersGuide": true
+        }
+    },
+    "adminMandatory": {
+        "scopeLevel": {
+            "MoreDateFiltersGuide": true
+        }
+    }
+}
