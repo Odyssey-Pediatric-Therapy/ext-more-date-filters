@@ -1,6 +1,5 @@
 <?php
 return [
-  "version" => "9.1.8",
   'useCache' => False,
   'useCacheInDeveloperMode' => False,
   'isDeveloperMode' => True,

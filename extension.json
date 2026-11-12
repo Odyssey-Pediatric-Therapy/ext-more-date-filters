@@ -5,10 +5,10 @@
     "author": "Anthony Andriano",
     "bundled": true,
     "acceptableVersions": [
-        ">=9.1.0"
+        ">=10.1.0"
     ],
     "php": [
-        ">=8.2"
+        ">=8.5"
     ],
     "scripts": []
 }
